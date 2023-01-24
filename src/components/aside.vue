@@ -10,7 +10,6 @@ export default {
   methods: {
     load(t) {
       router.push(t)
-
     }
   },
   screen: {

@@ -8,8 +8,8 @@ import asideX from '../components/aside.vue'
    
   </asideX>
 
-  <div class="mt-[10%] flex col-start-2 row-start-1 row-end-1 justify-center items-center rounded bg-gray-400 w-[85vw] h-[15vh]">
-         <p class="self-center text-[2rem]">Register</p>
+  <div class="mt-[10%] flex col-start-2 row-start-1 row-end-1 justify-center items-center rounded bg-gray-900 w-[85vw] h-[15vh]">
+         <p class="self-center text-[2rem] text-[white]">Register</p>
         
   </div>
   </div>
