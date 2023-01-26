@@ -1,6 +1,8 @@
 <script setup>
-import asideX from "../components/aside.vue";
-</script>
+import asideX from "../components/aside.vue"
+import router from '../router'
+
+</script> 
 
 <template>
   <div class="grid grid-cols-8 grid-rows-[200px 300px]">

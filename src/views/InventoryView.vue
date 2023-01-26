@@ -12,7 +12,9 @@ import asideX from '../components/aside.vue'
               </div>
               <div
                      class="flex  flex-col col-start-2 col-end-2 row-start-2 row-end-2  items-center rounded bg-gray-700 w-[85vw] h-[70vh]">
-                     <div class="flex flex-col w-[75%] justify-start p-[1rem] self-end">
+                     <div class="flex flex-row w-[75%] justify-end w-[100%]  p-[1rem] self-end">
+                            <!-- <p class="ml-[2rem] text-[2rem] text-[white] text-[]">Collection</p> -->
+
                             <div
                                    class="text-[1.2rem] self-end flex bg-gray-900 rounded p-[1rem] h-[3rem] justify-between">
                                    <div class="font-bold self-center text-center text-[white]">1</div>
@@ -20,7 +22,7 @@ import asideX from '../components/aside.vue'
                             </div>
                      </div>
                      <div class="flex w-[75%] flex-col text-[2rem] text-[white] ">
-                            <p class="underline">Collection</p>
+                           
                             <div id="card-container" class="flex flex-wrap ">
                                    <div
                                           class=" flex flex-col p-[0.5rem] w-[7rem] h-[10rem] border-[solid] border-[2px] rounded-br-lg border-[black] bg-indigo-900">
