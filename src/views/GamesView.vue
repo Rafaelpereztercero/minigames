@@ -26,10 +26,22 @@ function setWin(classSet) {
        if (document.getElementById('1ra').classList.contains(classSet) && document.getElementById('2ra').classList.contains(classSet) && document.getElementById('3ra').classList.contains(classSet)) {
               return true
        }
+       let count = 0
+       for (let celda = 1; celda < 9;celda++) {
+                          
+                            if (document.getElementById(`${celda}ra`).classList.contains('bg-gray-600') || document.getElementById(`${celda}ra`).classList.contains('bg-white')){
+                                  count ++
+                            }
+       }
+       if (count == 8) {
+              return "tie"
+       }
        return false
 
 }
+
 window.onload = function () {
+       
        function setCeld(num) {
               for (var z = 0; z < num;z++) {
                             let celda = Math.floor(Math.random() * 9) + 1;
@@ -53,7 +65,7 @@ window.onload = function () {
               <div id="frScreen"class="self-center h-[14rem] w-[14rem] bg-gray-600 rounded z-0 border-[1px] fixed hidden text-center">
               <div class=" h-[14rem] w-[14rem] flex flex-col justify-center items-center ">
               <p class="text-[white] text-[2rem]">You lost</p>
-              <div class="w-[4rem] h-[2rem] cursor-pointer rounded bg-red-500 text-[white]">EXIT</div>
+              <div  v-on:click="redirect('Games')" class="w-[4rem] h-[2rem] cursor-pointer rounded bg-red-500 text-[white]">EXIT</div>
               <p class="text-[white] text-[1.5rem] mt-[1rem]">Total Score</p>
               <p id="finalScore" class="text-[white] border-[1px] w-[25%] rounded">15</p>
               </div>
@@ -145,7 +157,7 @@ window.onload = function () {
               <div id="frScreen"class="self-center h-[14rem] w-[14rem] bg-gray-600 rounded z-0 border-[1px] fixed hidden text-center">
               <div class=" h-[14rem] w-[14rem] flex flex-col justify-center items-center ">
               <p  id="finalScore" class="text-[white] text-[2rem]">You lost</p>
-              <div class="w-[4rem] h-[2rem] cursor-pointer rounded bg-red-500 text-[white]">EXIT</div>
+              <div v-on:click="redirect('Games')" class="w-[4rem] h-[2rem] cursor-pointer rounded bg-red-500 text-[white]">EXIT</div>
              
               </div>
               </div>
@@ -180,7 +192,7 @@ window.onload = function () {
               </div>`
               for (var i = 1; i <= 9; i++) {
                      document.getElementById(`${i}ra`).addEventListener("click", function (event) {
-                            if (setWin("bg-white") && setWin("gray-600") == true){ return }
+                            if (setWin("bg-white") && setWin("gray-600") == true || setWin("gray-600") == "tie" || setWin("bg-white") == "tie" ){ return }
                             if (event.target.classList.contains('bg-gray-600') || event.target.classList.contains('bg-white') || document.getElementById("winner").innerHTML != "") {
                                    return
                             }
@@ -188,7 +200,10 @@ window.onload = function () {
                                    event.target.classList.add('bg-gray-600')
                                    document.getElementById("player").innerHTML = parseInt(document.getElementById("player").innerHTML) + 1
                                    if (setWin('bg-gray-600') == true) {
-                                          document.getElementById("winner").innerHTML = "Player"
+                                          document.getElementById("frScreen").classList.remove("hidden")
+                                   document.getElementById("frScreen").classList.remove("bg-gray-600")
+                                   document.getElementById("frScreen").classList.add("bg-green-400")
+                                   document.getElementById("finalScore").innerHTML= "You Won!"
                                    }
                                    return
                             }
@@ -201,6 +216,10 @@ window.onload = function () {
                                    document.getElementById("frScreen").classList.add("bg-green-400")
                                    document.getElementById("finalScore").innerHTML= "You Won!"
                             }
+                            if (setWin('bg-gray-600') == "tie") {
+                                   document.getElementById("frScreen").classList.remove("hidden")
+                                   document.getElementById("finalScore").innerHTML= "Tie!"
+                            }
                             let asker = true
                             while (asker == true) {
                                    let celda = Math.floor(Math.random() * 9) + 1;
@@ -212,6 +231,10 @@ window.onload = function () {
                                           if (setWin('bg-white') == true) {
                                                  document.getElementById("frScreen").classList.remove("hidden")
                                           }
+                                          if (setWin('bg-white') == "tie") {
+                                   document.getElementById("frScreen").classList.remove("hidden")
+                                   document.getElementById("finalScore").innerHTML= "Tie!"
+                            }
                                           return
                                    }
                             }
