@@ -4,7 +4,10 @@ const Myclass = plugin(function ({addUtilities}) {
   addUtilities({
     ".my-rotate-y-180": {
       transform:"rotateY(180deg)"
-    }
+    },
+    transitionProperty: {
+      width: 'width'
+  }
   })
 })
 module.exports = {
