@@ -17,9 +17,10 @@ module.exports = {
   theme: {
    
       screens: {
+        'ss': '0px',
         'sm': '640px',
         // => @media (min-width: 640px) { ... }
-  
+        'ssm':'641px',
         'md': '768px',
         // => @media (min-width: 768px) { ... }
         

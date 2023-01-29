@@ -22,11 +22,20 @@ export default {
 </script>
 
 <template>
-  
-  <div class="w-full h-full flex flex-col">
+
+    <!-- PHONE BURGER  -->
+ 
+
+
+  <!-- DESKTOP BURGER  -->
+  <div class="hidden sm:inline"
+  >
+    
+  <div class="hidden sm:inline w-full h-full flex flex-col ">
     <div class="flex flex-no-wrap">
-      <div style="min-height: 95vh"
-        class="flex rounded-br-lg w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col hidden sm:flex">
+      
+      <div style="min-height: 95vh" 
+        class="flex rounded-br-lg w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col  ">
         <div class="flex flex-col text-[1.2rem] text-blue-400 self-center font-bold">
           <img class="self-center w-[10rem]" src="/Gameboy.png" />
           <div class="flex flex-col mx:flex-row flex-wrap justify-center items-center mx:justify-between mx:items-between p-[0.4rem] text-[0.8rem] ">
@@ -46,7 +55,7 @@ export default {
               </path>
             </svg>
 
-            <div class="self-center items-center ml-[20px] hidden mx:inline hidden">Games</div>
+            <div class="self-center items-center ml-[20px]  mx:inline hidden">Games</div>
           </div>
           <div v-on:click="load('Shop')"  class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justify-between w-[75%] text-white flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle self-center w-full mx:w-[1rem]" 
@@ -57,7 +66,7 @@ export default {
                 d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
               </path>
             </svg>
-            <div class="self-center items-center text-center  mx:inline hidden ">Shop</div>
+            <div class="self-center items-center ml-[20px]  mx:inline hidden">Shop</div>
 
           </div>
           <div  v-on:click="load('Inventory')" class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center justify-center mx:justify-between w-[75%] text-white flex">
@@ -100,8 +109,8 @@ export default {
 
     </div>
     
-    <div class=" text-white flex items-center mt-[0.5rem] justify-center text-center bg-gray-900 w-[100vw] h-[20px]"> Rafa Dev
-     Copyright 2023</div>
+    
 
   </div>
+</div>
 </template>
