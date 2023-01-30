@@ -488,16 +488,45 @@ window.onload = function () {
               </div>
               <div
                      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh] justify-center">
-                     <div class="w-[70%] h-[40%] mr-[10%] flex flex-wrap justify-between">
-                            <div class="mb-[5%] ml-[10%] bg-gray-600 h-[100%] w-[15%] rounded"></div>
-                            <div class="mb-[5%] ml-[10%] bg-gray-600 h-[100%] w-[15%] rounded"></div>
-                            <div class="mb-[5%] ml-[10%] bg-gray-600 h-[100%] w-[15%] rounded"></div>
+                     <div class="w-[100%] h-[100%] self-center flex flex-col justify-center items-center">
+                            <p>HOLA</p>
+                            <div id="carouselExampleControls" class="carousel slide w-[40%] h-full  "
+                                          data-bs-ride="carousel">
+                                          <div class="carousel-inner relative w-full overflow-hidden ">
+                                                 <div id="first"
+                                                        class="carousel-item active relative float-left w-full">
+                                                        <img src="/mario.png" class="block w-full"
+                                                               alt="Wild Landscape" />
+                                                 </div>
+                                                 <div id="second" class="carousel-item relative float-left w-full">
+                                                        <img src="/mario.png" class="block w-full" alt="Camera" />
+                                                 </div>
+                                                 <div id="third" class="carousel-item relative float-left w-full">
+                                                        <img src="/mario.png" class="k w-full"
+                                                               alt="Exotic Fruits" />
+                                                 </div>
+                                          </div>
+                                          <button class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                                                 type="button" data-bs-target="#carouselExampleControls"
+                                                 data-bs-slide="prev">
+                                                 <span class="carousel-control-prev-icon inline-block bg-no-repeat"
+                                                        aria-hidden="true"></span>
+                                                 <span class="visually-hidden">Previous</span>
+                                          </button>
+                                          <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                                                 type="button" data-bs-target="#carouselExampleControls"
+                                                 data-bs-slide="next">
+                                                 <span class="carousel-control-next-icon inline-block bg-no-repeat"
+                                                        aria-hidden="true"></span>
+                                                 <span class="visually-hidden">Next</span>
+                                          </button>
+                                   </div>
+                            
 
 
 
 
                      </div>
-                     <div class="text-[white] text-[3rem]">GAME LIST</div>
 
               </div>
               <footerX class="row-start-4 row-end-5"></footerX>
