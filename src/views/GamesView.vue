@@ -487,21 +487,18 @@ window.onload = function () {
 
               </div>
               <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh]">
-                     <div class="w-[70%] h-[70%] flex flex-wrap justify-between">
-                            <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
-                            <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
-
-                     
-                            
-                     <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
-                     <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
+                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh] justify-center">
+                     <div class="w-[70%] h-[40%] mr-[10%] flex flex-wrap justify-between">
+                            <div class="mb-[5%] ml-[10%] bg-gray-600 h-[100%] w-[15%] rounded"></div>
+                            <div class="mb-[5%] ml-[10%] bg-gray-600 h-[100%] w-[15%] rounded"></div>
+                            <div class="mb-[5%] ml-[10%] bg-gray-600 h-[100%] w-[15%] rounded"></div>
 
 
 
-              </div>
-                     <div class="text-[white]">THIS IS A TEST</div>
-                     
+
+                     </div>
+                     <div class="text-[white] text-[3rem]">GAME LIST</div>
+
               </div>
               <footerX class="row-start-4 row-end-5"></footerX>
        </div>
