@@ -483,25 +483,54 @@ window.onload = function () {
               <div
                      class="mt-[10%] grid grid-cols-8 sm:flex col-start-2 sm:col-end-2 col-end-[-2] w-full row-start-1 row-end-1 justify-center items-center rounded bg-gray-900 sm:w-[85vw] h-[15vh]">
                      <asideY class="col-start-2 cursor-pointer"></asideY>
-                     <p class="col-start-4 self-center text-[2.5rem] text-[white]">Games</p>
+                     <p class="col-start-4 self-center text-[2.5rem] text-[white]">Home</p>
 
               </div>
               <div
                      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh]">
-                     <div class="w-[70%] h-[70%] flex flex-wrap justify-between">
-                            <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
-                            <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
-
-                     
-                            
-                     <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
-                     <div class="bg-gray-600 h-[10rem] w-[10rem] rounded"></div>
-
-
-
-              </div>
                      <div class="text-[white]">THIS IS A TEST</div>
-                     
+                     <div class="grid grid-cols-9">
+                            <div class="underline col-start-2 text-[white]">
+                                   List
+                            </div>
+                            <div class="flex justify-center h-[100%] w-[100%] mt-[4rem] col-start-4 col-end-7">
+                                   <div id="carouselExampleControls" class="carousel slide relative  "
+                                          data-bs-ride="carousel">
+                                          <div class="carousel-inner relative w-full overflow-hidden">
+                                                 <div id="first"
+                                                        class="carousel-item active relative float-left w-full">
+                                                        <img src="/mario.png" class="block w-full"
+                                                               alt="Wild Landscape" />
+                                                 </div>
+                                                 <div id="second" class="carousel-item relative float-left w-full">
+                                                        <img src="/mario.png" class="block w-full" alt="Camera" />
+                                                 </div>
+                                                 <div id="third" class="carousel-item relative float-left w-full">
+                                                        <img src="/mario.png" class="block w-full"
+                                                               alt="Exotic Fruits" />
+                                                 </div>
+                                          </div>
+                                          <button class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                                                 type="button" data-bs-target="#carouselExampleControls"
+                                                 data-bs-slide="prev">
+                                                 <span class="carousel-control-prev-icon inline-block bg-no-repeat"
+                                                        aria-hidden="true"></span>
+                                                 <span class="visually-hidden">Previous</span>
+                                          </button>
+                                          <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                                                 type="button" data-bs-target="#carouselExampleControls"
+                                                 data-bs-slide="next">
+                                                 <span class="carousel-control-next-icon inline-block bg-no-repeat"
+                                                        aria-hidden="true"></span>
+                                                 <span class="visually-hidden">Next</span>
+                                          </button>
+                                   </div>
+                            </div>
+                            <div class="col-start-9 underline text-[white]">
+                                   Top Played
+                            </div>
+
+                     </div>
               </div>
               <footerX class="row-start-4 row-end-5"></footerX>
        </div>
