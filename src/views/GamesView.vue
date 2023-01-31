@@ -495,11 +495,11 @@ window.onload = function () {
               <div  id="cookieAlert" class="flex ">
                      <div class="fixed z-50">
                                    <div 
-                                          class="flex flex-col text-black items-center  w-[75%] bg-white p-[2rem] mt-[3rem]">
+                                          class="flex flex-col text-black items-center  w-[75%] bg-white p-[2rem] mt-[3rem] rounded">
                                           <div class="grid grid-cols-3 justify-center ">
                                                  <img class="col-start-1 col-end-4" src="/header_alert.png">
                                                  <div id="cookieAccept"
-                                                        class="grid col-start-4 grid-cols-5 h-[5rem] w-[5rem] border-[1px] border-[black] cursor-pointer self-center bg-gray-300 rounded">
+                                                        class="hidden grid col-start-4 grid-cols-5 h-[5rem] w-[5rem] border-[1px] border-[black] cursor-pointer self-center bg-gray-300 rounded">
                                                         <div
                                                                class="col-start-3 col-end-3 row-start-1 w-[1rem] h-full bg-black rotate-[-45deg] rounded">
                                                         </div>
