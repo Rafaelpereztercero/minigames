@@ -39,8 +39,8 @@ export default {
         <div class="flex flex-col text-[1.2rem] text-blue-400 self-center font-bold">
           <img class="self-center w-[10rem]" src="/Gameboy.png" />
           <div class="flex flex-col mx:flex-row flex-wrap justify-center items-center mx:justify-between mx:items-between p-[0.4rem] text-[0.8rem] ">
-            <div v-on:click="load('Login')" class="cursor-pointer hover:bg-gray-900 rounded w-[4rem] text-center border-solid border-white border-[3px] p-[0.2rem] bg-gry-300">Login</div>
-            <div v-on:click="load('Register')" class="cursor-pointer mt-[1rem] mx:mt-[0] hover:bg-gray-900 rounded text-center w-[4rem] border-solid border-white border-[3px] p-[0.2rem] bg-gry-300">Register
+            <div v-on:click="load('Login')" class="text-[white] cursor-pointer hover:bg-gray-900 rounded w-[4rem] text-center border-solid border-white border-[1px] p-[0.2rem] bg-gradient-to-br from-current via-purple-900 to-rose-600">Login</div>
+            <div v-on:click="load('Register')" class="text-[white] cursor-pointer mt-[1rem] mx:mt-[0] hover:bg-gray-900 rounded text-center w-[4rem] border-solid border-white border-[1px] p-[0.2rem] bg-gradient-to-br from-current via-purple-900 to-rose-600">Register
             </div>
           </div>
         </div>
@@ -48,69 +48,36 @@ export default {
         <div class="flex flex-no-wrap flex-col justify-between h-[20rem] mt-[1rem]">
           <div v-on:click="load('Home')"
             class=" hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white flex items-center ">
-            <svg class="mx:w-[2rem] w-full h-6 fill-current inline-block self-center" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 495.398 495.398" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M487.083,225.514l-75.08-75.08V63.704c0-15.682-12.708-28.391-28.413-28.391c-15.669,0-28.377,12.709-28.377,28.391 v29.941L299.31,37.74c-27.639-27.624-75.694-27.575-103.27,0.05L8.312,225.514c-11.082,11.104-11.082,29.071,0,40.158 c11.087,11.101,29.089,11.101,40.172,0l187.71-187.729c6.115-6.083,16.893-6.083,22.976-0.018l187.742,187.747 c5.567,5.551,12.825,8.312,20.081,8.312c7.271,0,14.541-2.764,20.091-8.312C498.17,254.586,498.17,236.619,487.083,225.514z"></path> <path d="M257.561,131.836c-5.454-5.451-14.285-5.451-19.723,0L72.712,296.913c-2.607,2.606-4.085,6.164-4.085,9.877v120.401 c0,28.253,22.908,51.16,51.16,51.16h81.754v-126.61h92.299v126.61h81.755c28.251,0,51.159-22.907,51.159-51.159V306.79 c0-3.713-1.465-7.271-4.085-9.877L257.561,131.836z"></path> </g> </g> </g> </g></svg>
+            <svg class="mx:w-[20px] w-full h-6 fill-current inline-block self-center" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 495.398 495.398" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M487.083,225.514l-75.08-75.08V63.704c0-15.682-12.708-28.391-28.413-28.391c-15.669,0-28.377,12.709-28.377,28.391 v29.941L299.31,37.74c-27.639-27.624-75.694-27.575-103.27,0.05L8.312,225.514c-11.082,11.104-11.082,29.071,0,40.158 c11.087,11.101,29.089,11.101,40.172,0l187.71-187.729c6.115-6.083,16.893-6.083,22.976-0.018l187.742,187.747 c5.567,5.551,12.825,8.312,20.081,8.312c7.271,0,14.541-2.764,20.091-8.312C498.17,254.586,498.17,236.619,487.083,225.514z"></path> <path d="M257.561,131.836c-5.454-5.451-14.285-5.451-19.723,0L72.712,296.913c-2.607,2.606-4.085,6.164-4.085,9.877v120.401 c0,28.253,22.908,51.16,51.16,51.16h81.754v-126.61h92.299v126.61h81.755c28.251,0,51.159-22.907,51.159-51.159V306.79 c0-3.713-1.465-7.271-4.085-9.877L257.561,131.836z"></path> </g> </g> </g> </g></svg>
 
             <div class="self-center items-center ml-[20px]  mx:inline hidden">Home</div>
           </div>
           <div v-on:click="load('Games')"
             class=" hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white flex items-center ">
-            <svg class="mx:w-[2rem] w-full h-6 fill-current inline-block self-center" fill="currentColor" viewBox="0 0 20 20" 
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z">
-              </path>
-            </svg>
+            <svg class="mx:w-[20px] w-full h-6 fill-current inline-block self-center" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9,21a1,1,0,0,0,1-1V19a2,2,0,0,1,4,0v.78A1.223,1.223,0,0,0,15.228,21,7.7,7.7,0,0,0,23,13.73,7.5,7.5,0,0,0,15.5,6H13V4a1,1,0,0,0-2,0V6H8.772A7.7,7.7,0,0,0,1,13.27a7.447,7.447,0,0,0,2.114,5.453A7.81,7.81,0,0,0,9,21ZM8.772,8H15.5A5.5,5.5,0,0,1,21,13.67a5.643,5.643,0,0,1-5,5.279,4,4,0,0,0-8,.029A5.5,5.5,0,0,1,3,13.33,5.684,5.684,0,0,1,8.772,8ZM5,12.5a1,1,0,0,1,1-1H7v-1a1,1,0,0,1,2,0v1h1a1,1,0,0,1,0,2H9v1a1,1,0,0,1-2,0v-1H6A1,1,0,0,1,5,12.5ZM17,11a1,1,0,1,1,1,1A1,1,0,0,1,17,11Zm-2,3a1,1,0,1,1,1,1A1,1,0,0,1,15,14Z"></path></g></svg>
 
             <div class="self-center items-center ml-[20px]  mx:inline hidden">Games</div>
           </div>
           <div v-on:click="load('Shop')"  class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white flex items-center ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle self-center w-full mx:w-[2rem]" 
-              height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <path
-                d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
-              </path>
-            </svg>
+            <svg class="mx:w-[20px] w-full h-6 fill-current inline-block self-center" fill="#ffffff" height="200px" width="200px" version="1.1" id="XMLID_269_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="shop-cart"> <g> <circle cx="9" cy="21" r="2"></circle> </g> <g> <circle cx="19" cy="21" r="2"></circle> </g> <g> <path d="M21,18H7.2l-4-16H0V0h4.8l0.8,3H24l-3.2,11H8.3l0.5,2H21V18z M7.8,12h11.5l2-7H6L7.8,12z"></path> </g> </g> </g></svg>
             <div class="self-center items-center ml-[20px]  mx:inline hidden">Shop</div>
 
           </div>
           <div  v-on:click="load('Inventory')" class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white flex items-center ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack self-center  w-full mx:w-[5rem]" 
-              height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <polyline points="12 4 4 8 12 12 20 8 12 4"></polyline>
-              <polyline points="4 12 12 16 20 12"></polyline>
-              <polyline points="4 16 12 20 20 16"></polyline>
-            </svg>
+            <svg  class="mx:w-[20px] w-full h-6 fill-current inline-block self-center" fill="#000000" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" id="memory-bag-personal"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M17 15H9V17H7V15H5V19H17V15M17 9H16V8H15V7H7V8H6V9H5V13H17V9M13 11H9V10H10V9H12V10H13V11M3 8H4V6H6V5H7V2H8V1H14V2H15V5H16V6H18V8H19V20H18V21H4V20H3V8M9 3V5H13V3H9Z"></path></g></svg>
             <div class="self-center items-center text-center ml-[20px] mx:inline hidden">Inventory</div>
           </div>
           <div  v-on:click="load('Stats')" class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white flex items-center ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid  self-center w-full mx:w-[2rem]"
-              height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <rect x="4" y="4" width="6" height="6" rx="1"></rect>
-              <rect x="14" y="4" width="6" height="6" rx="1"></rect>
-              <rect x="4" y="14" width="6" height="6" rx="1"></rect>
-              <rect x="14" y="14" width="6" height="6" rx="1"></rect>
-            </svg>
+            <svg class="mx:w-[20px] w-full h-6 fill-current inline-block self-center" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_901_1558)"> <path d="M29 7H30C30.553 7 31 7.447 31 8V30C31 30.553 30.553 31 30 31H2C1.447 31 1 30.553 1 30V8C1 7.447 1.447 7 2 7H19M6 28V19H10V28M14 28V13H18V28M22 28V1H26V28" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_901_1558"> <rect width="32" height="32" fill="white"></rect> </clipPath> </defs> </g></svg>
             <div class="self-center items-center ml-[20px]  mx:inline hidden">Stats</div>
           </div>
           
           <div v-on:click="load('Profile')" id="Profile" class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white flex items-center ">
-            <svg class=" self-center w-full mx:w-[2rem] h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-              </path>
-            </svg>
-            <div class="self-center items-center ml-[20px]  mx:inline hidden">Profile</div>
+            <svg class="mx:w-[20px] w-full h-6 fill-current inline-block self-center" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,11A5,5,0,1,0,7,6,5.006,5.006,0,0,0,12,11Zm0-8A3,3,0,1,1,9,6,3,3,0,0,1,12,3ZM4,23H20a1,1,0,0,0,1-1V18a5.006,5.006,0,0,0-5-5H8a5.006,5.006,0,0,0-5,5v4A1,1,0,0,0,4,23Zm1-5a3,3,0,0,1,3-3h8a3,3,0,0,1,3,3v3H5Z"></path></g></svg>            <div class="self-center items-center ml-[20px]  mx:inline hidden">Profile</div>
           </div>
 
         </div>
-        <div class="mt-[1rem] h-[12rem] mx:h-[8rem] w-[60%] bg-gray-700 self-center rounded mx:grid mx:grid-cols-3 flex flex-col p-[1.8rem]">
+        <div class="mt-[1rem] h-[12rem] mx:h-[6rem] w-[60%] bg-gray-700 self-center rounded mx:grid mx:grid-cols-3 flex flex-col p-[1rem]">
           <div  class="self-center">
           <svg fill="#ffffff" class="self-center w-[1.5rem] rounded" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z M215.2,361.2c0.1,2.2,0.1,4.5,0.1,6.8c0,69.5-52.9,149.7-149.7,149.7c-29.7,0-57.4-8.7-80.6-23.6c4.1,0.5,8.3,0.7,12.6,0.7 c24.6,0,47.3-8.4,65.3-22.5c-23-0.4-42.5-15.6-49.1-36.5c3.2,0.6,6.5,0.9,9.9,0.9c4.8,0,9.5-0.6,13.9-1.9 C13.5,430-4.6,408.7-4.6,383.2v-0.6c7.1,3.9,15.2,6.3,23.8,6.6c-14.1-9.4-23.4-25.6-23.4-43.8c0-9.6,2.6-18.7,7.1-26.5 c26,31.9,64.7,52.8,108.4,55c-0.9-3.8-1.4-7.8-1.4-12c0-29,23.6-52.6,52.6-52.6c15.1,0,28.8,6.4,38.4,16.6 c12-2.4,23.2-6.7,33.4-12.8c-3.9,12.3-12.3,22.6-23.1,29.1c10.6-1.3,20.8-4.1,30.2-8.3C234.4,344.5,225.5,353.7,215.2,361.2z"></path> </g></svg>
         </div>

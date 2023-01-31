@@ -60,10 +60,13 @@ window.onload = function () {
 
               }
        }
-       document.getElementById("cookieAccept").addEventListener("click",function(){
+       document.getElementById("cookieAccept").addEventListener("click", function () {
               document.getElementById("cookieAlert").classList.add("hidden")
        })
-
+       document.getElementById("acceptCookie").addEventListener("click", function () {
+              document.getElementById("cookieAlert").classList.add("hidden")
+       })
+       
        document.getElementById("first").addEventListener("click", function () {
 
 
@@ -489,56 +492,82 @@ window.onload = function () {
                      <p class="col-start-4 self-center text-[2.5rem] text-[white]">Games</p>
 
               </div>
-              <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh] justify-center">
-                 
-                     <div class="w-[100%] h-[100%] self-center flex flex-col justify-center items-center">
-                            <div id="cookieAlert" class="flex flex-col text-black items-center w-[75%] bg-white p-[2rem] mt-[3rem]">
-                            <div class="flex">
-                                   <img src="/header_alert.png">
-                                   <div id="cookieAccept" class=" h-[5rem] w-[5rem] border-[1px] border-[black]"></div>
-                            </div>
-                            <h2 class="mt-[1rem]">Su privacidad es importante para nosotros</h2>
-                            <p class="mt-[2rem]">Nosotros y nuestros almacenamos o accedemos a información en un dispositivo, tales como cookies, y procesamos datos personales, tales como identificadores únicos e información estándar enviada por un dispositivo, para anuncios y contenido personalizados, medición de anuncios y del contenido e información sobre el público, así como para desarrollar y mejorar productos. Con su permiso, nosotros y nuestros socios podemos utilizar datos de localización geográfica precisa e identificación mediante las características de dispositivos. Puede hacer clic para otorgarnos su consentimiento a nosotros y a nuestros socios para que llevemos a cabo el procesamiento previamente descrito. De forma alternativa, puede acceder a información más detallada y cambiar sus preferencias antes de otorgar o negar su consentimiento.
-Tenga en cuenta que algún procesamiento de sus datos personales puede no requerir de su consentimiento, pero usted tiene el derecho de rechazar tal procesamiento. Sus preferencias se aplicarán solo a este sitio web. Puede cambiar sus preferencias en cualquier momento entrando de nuevo en este sitio web o visitando nuestra política de privacidad.</p>
-                     
-<div class="border-[1px]">
-       <input type="button" value="Aceptar">
-</div>
-</div>
-                            <p>HOLA</p>
-                            <div id="carouselExampleControls" class="carousel slide w-[40%] h-full  "
-                                          data-bs-ride="carousel">
-                                          <div class="carousel-inner relative w-full overflow-hidden ">
-                                                 <div id="first"
-                                                        class="carousel-item active relative float-left w-full">
-                                                        <img src="/mario.png" class="block w-full"
-                                                               alt="Wild Landscape" />
-                                                 </div>
-                                                 <div id="second" class="carousel-item relative float-left w-full">
-                                                        <img src="/mario.png" class="block w-full" alt="Camera" />
-                                                 </div>
-                                                 <div id="third" class="carousel-item relative float-left w-full">
-                                                        <img src="/mario.png" class="k w-full"
-                                                               alt="Exotic Fruits" />
+              <div  id="cookieAlert" class="flex ">
+                     <div class="fixed z-50">
+                                   <div 
+                                          class="flex flex-col text-black items-center  w-[75%] bg-white p-[2rem] mt-[3rem]">
+                                          <div class="grid grid-cols-3 justify-center ">
+                                                 <img class="col-start-1 col-end-4" src="/header_alert.png">
+                                                 <div id="cookieAccept"
+                                                        class="grid col-start-4 grid-cols-5 h-[5rem] w-[5rem] border-[1px] border-[black] cursor-pointer self-center bg-gray-300 rounded">
+                                                        <div
+                                                               class="col-start-3 col-end-3 row-start-1 w-[1rem] h-full bg-black rotate-[-45deg] rounded">
+                                                        </div>
+                                                        <div
+                                                               class="col-start-3 col-end-3 row-start-1 w-[1rem] h-full bg-black rotate-[45deg] rounded ">
+                                                        </div>
                                                  </div>
                                           </div>
-                                          <button class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-                                                 type="button" data-bs-target="#carouselExampleControls"
-                                                 data-bs-slide="prev">
-                                                 <span class="carousel-control-prev-icon inline-block bg-no-repeat"
-                                                        aria-hidden="true"></span>
-                                                 <span class="visually-hidden">Previous</span>
-                                          </button>
-                                          <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-                                                 type="button" data-bs-target="#carouselExampleControls"
-                                                 data-bs-slide="next">
-                                                 <span class="carousel-control-next-icon inline-block bg-no-repeat"
-                                                        aria-hidden="true"></span>
-                                                 <span class="visually-hidden">Next</span>
-                                          </button>
+                                          <h2 class="mt-[1rem]">Su privacidad es importante para nosotros</h2>
+                                          <p class="mt-[2rem]">Nosotros y nuestros almacenamos o accedemos a información
+                                                 en un dispositivo, tales como cookies, y procesamos datos personales,
+                                                 tales como identificadores únicos e información estándar enviada por un
+                                                 dispositivo, para anuncios y contenido personalizados, medición de
+                                                 anuncios y del contenido e información sobre el público, así como para
+                                                 desarrollar y mejorar productos. Con su permiso, nosotros y nuestros
+                                                 socios podemos utilizar datos de localización geográfica precisa e
+                                                 identificación mediante las características de dispositivos. Puede
+                                                 hacer clic para otorgarnos su consentimiento a nosotros y a nuestros
+                                                 socios para que llevemos a cabo el procesamiento previamente descrito.
+                                                 De forma alternativa, puede acceder a información más detallada y
+                                                 cambiar sus preferencias antes de otorgar o negar su consentimiento.
+                                                 Tenga en cuenta que algún procesamiento de sus datos personales puede
+                                                 no requerir de su consentimiento, pero usted tiene el derecho de
+                                                 rechazar tal procesamiento. Sus preferencias se aplicarán solo a este
+                                                 sitio web. Puede cambiar sus preferencias en cualquier momento entrando
+                                                 de nuevo en este sitio web o visitando nuestra política de privacidad.
+                                          </p>
+
+                                          <div id="acceptCookie" class="border-[1px]">
+                                                 <input type="button" class="bg-green-700  w-[50rem] text-white p-[1rem] rounded"
+                                                        value="ACEPTO">
+                                          </div>
                                    </div>
+                            </div>
+                     </div>
+              <div
+                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh] justify-center">
+                    
+                     <div class="w-[100%] h-[100%] self-center flex flex-col justify-center items-center z-2 ">
                             
+                            <p>HOLA</p>
+                            <div id="carouselExampleControls" class="carousel slide w-[40%] h-full  "
+                                   data-bs-ride="carousel">
+                                   <div class="carousel-inner relative w-full overflow-hidden ">
+                                          <div id="first" class="carousel-item active relative float-left w-full">
+                                                 <img src="/mario.png" class="block w-full" alt="Wild Landscape" />
+                                          </div>
+                                          <div id="second" class="carousel-item relative float-left w-full">
+                                                 <img src="/mario.png" class="block w-full" alt="Camera" />
+                                          </div>
+                                          <div id="third" class="carousel-item relative float-left w-full">
+                                                 <img src="/mario.png" class="k w-full" alt="Exotic Fruits" />
+                                          </div>
+                                   </div>
+                                   <button class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                                          type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                          <span class="carousel-control-prev-icon inline-block bg-no-repeat"
+                                                 aria-hidden="true"></span>
+                                          <span class="visually-hidden">Previous</span>
+                                   </button>
+                                   <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                                          type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                          <span class="carousel-control-next-icon inline-block bg-no-repeat"
+                                                 aria-hidden="true"></span>
+                                          <span class="visually-hidden">Next</span>
+                                   </button>
+                            </div>
+
 
 
 
