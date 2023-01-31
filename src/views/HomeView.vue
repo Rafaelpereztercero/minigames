@@ -20,11 +20,19 @@ import footerX from '../components/footer.vue'
 
               </div>
               <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh]">
-              <h2 class="text-[white]">This is a test</h2>
-                     <img class="w-[5rem]" src="/_sil.png" />
-                     <img class="w-[5rem]" src="/_sil2.png" />
+                     class="flex mt-[10%] sm:mt-0  w-full col-start-2 col-end-[-2] sm:col-end-2 p-[4rem]  row-start-2 row-end-2   rounded bg-gray-700 sm:w-[85vw] h-[70vh]">
+              <div class="grid grid-cols-5 border-[1px] rounded">
+                     <div class="col-start-1 col-end-4 self-center border-[1px] flex flex-col p-[1rem]">
+                     
+                     <h2 class="text-[white] self-center ">Mini Games</h2>
+                     <p class="text-[1rem] w-[50%] self-center text-[white] mt-[1rem]">In this website you'll be able to play some traditional games who's avarge duartion does not reach 5 mins so you will have fun on your break times!</p>
+                     <div class="h-[auto] p-[1rem] mt-[2rem] self-center  rounded w-[12rem] border-[1px] bg-green-400 text-[white] text-center">Join Us!</div>
+              </div>
+                  <div class="w-full h-full col-start-4 border-[1px]  flex justify-center  self-center">
+                     <div class="w-[66%] h-[66%] border-[1px] self-center"></div>
+                  </div>
 
+              </div>
               </div>
               <footerX class="row-start-4 row-end-5"></footerX>
        </div>
