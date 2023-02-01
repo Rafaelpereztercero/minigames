@@ -492,7 +492,7 @@ window.onload = function () {
                      <p class="col-start-5 self-center text-[2.5rem] text-[white]">Games</p>
 
               </div>
-              <div  id="cookieAlert" class="flex ">
+              <!-- <div  id="cookieAlert" class="flex ">
                      <div class="fixed z-50">
                                    <div 
                                           class="flex flex-col text-black items-center  w-[75%] bg-white p-[2rem] mt-[3rem] rounded">
@@ -534,24 +534,28 @@ window.onload = function () {
                                           </div>
                                    </div>
                             </div>
-                     </div>
+                     </div> -->
               <div
                      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh] justify-center">
                     
                      <div class="w-[100%] h-[100%] self-center flex flex-col justify-center items-center z-2 ">
                             
-                            <p>HOLA</p>
-                            <div id="carouselExampleControls" class="carousel slide w-[40%] h-full  "
+                            <div class="grid grid-cols-5 self-center"> 
+                                   <div class="col-start-1 row-start-1 col-end-6 w-[100%] h-[40rem] flex justify-center">
+                                          <img  class="w-[50rem]" src="/Gameboy.png">
+                                   </div>
+                                   <div class=" col-start-3 row-start-1 self-center">
+                            <div id="carouselExampleControls" class="rounded carousel slide w-full h-[10.1rem] ml-[-0.4rem]  "
                                    data-bs-ride="carousel">
                                    <div class="carousel-inner relative w-full overflow-hidden ">
                                           <div id="first" class="carousel-item active relative float-left w-full">
-                                                 <img src="/mario.png" class="block w-full" alt="Wild Landscape" />
+                                                 <img src="/mario.png" class="block w-full rounded" alt="Wild Landscape" />
                                           </div>
                                           <div id="second" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="block w-full" alt="Camera" />
+                                                 <img src="/mario.png" class="block w-full rounded" alt="Camera" />
                                           </div>
                                           <div id="third" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="k w-full" alt="Exotic Fruits" />
+                                                 <img src="/mario.png" class="k w-full rounded" alt="Exotic Fruits" />
                                           </div>
                                    </div>
                                    <button class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
@@ -567,7 +571,8 @@ window.onload = function () {
                                           <span class="visually-hidden">Next</span>
                                    </button>
                             </div>
-
+                     </div>
+                     </div>
 
 
 
