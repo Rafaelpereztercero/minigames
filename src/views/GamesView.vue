@@ -537,47 +537,44 @@ window.onload = function () {
                      </div> -->
               <div
                      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] h-[70vh] justify-center">
-                    
-                     <div class="w-[100%] h-[100%] self-center flex flex-col justify-center items-center z-2 ">
-                            
-                            <div class="grid grid-cols-5 self-center"> 
-                                   <div class="col-start-1 row-start-1 col-end-6 w-[100%] h-[40rem] flex justify-center">
-                                          <img  class="w-[50rem]" src="/Gameboy.png">
-                                   </div>
-                                   <div class=" col-start-3 row-start-1 self-center">
-                            <div id="carouselExampleControls" class="rounded carousel slide w-full h-[10.1rem] ml-[-0.4rem]  "
+                    <div class="w-[20rem] h-[25rem] border-[1px] flex flex-col items-center bg-gray-400/50 rounded  p-[1rem]">
+                     <div class=" col-start-3 row-start-1 self-center ">
+                            <div id="carouselExampleControls" class="rounded carousel slide w-full h-[10.1rem] border-[10px] flex justify-center items-center border-[black]  "
                                    data-bs-ride="carousel">
                                    <div class="carousel-inner relative w-full overflow-hidden ">
                                           <div id="first" class="carousel-item active relative float-left w-full">
-                                                 <img src="/mario.png" class="block w-full rounded" alt="Wild Landscape" />
+                                                 <img src="/mario.png" class="block w-full rounded"  />
                                           </div>
                                           <div id="second" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="block w-full rounded" alt="Camera" />
+                                                 <img src="/mario.png" class="block w-full rounded"  />
                                           </div>
                                           <div id="third" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="k w-full rounded" alt="Exotic Fruits" />
+                                                 <img src="/mario.png" class="k w-full rounded" />
                                           </div>
                                    </div>
-                                   <button class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                                 
+                            </div>
+                            <div class="text-center bg-gray-300 p-[0.6rem] mt-[0.5rem] rounded">
+                                   MiniGames
+                            </div>
+                            <div class="flex justify-between mt-[3rem] p-[1rem]">
+                     <button class="bg-red-600 font-bold p-[1rem] h-[3rem] w-[3rem] flex items-center justify-center rounded-full border-[1px]"
                                           type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                          <span class="carousel-control-prev-icon inline-block bg-no-repeat"
-                                                 aria-hidden="true"></span>
-                                          <span class="visually-hidden">Previous</span>
+                                          A
+                                         
                                    </button>
-                                   <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                                   <button class="bg-red-600 font-bold p-[1rem] h-[3rem] flex items-center justify-center w-[3rem] rounded-full border-[1px]"
                                           type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                          <span class="carousel-control-next-icon inline-block bg-no-repeat"
-                                                 aria-hidden="true"></span>
-                                          <span class="visually-hidden">Next</span>
+                                          B
+                                         
                                    </button>
                             </div>
                      </div>
-                     </div>
-
-
-
-
-                     </div>
+                    
+                    </div>
+                    
+                                   
+                     
 
               </div>
               <footerX class="row-start-4 row-end-5"></footerX>
