@@ -18,30 +18,32 @@ import footerX from '../components/footer.vue'
 
               </div>
               <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh]">
-      <div class="flex w-[75%] justify-around">
-
-        <div class="flex flex-col items-center">
-          <p class="text-[1.5rem] text-[white] underline">Image</p><img
-            class="rounded p-[1rem] border-solid h-[100px] w-[100px] border-[4px] border-black flex-col bg-blue-500"
-            src="/Gameboy.png">
-        </div>
-        <div class="flex items-center flex-col text-[white]">
-          <p class="text-[1.5rem] underline">Username</p>
-          <p class="text-[2rem] font-bold flex ">Rafa380</p>
-        </div>
-      </div>
-      <div class="grid grid-cols-4 w-[75%] items-center justify-between h-[20%] text-[white]">
-        <p class="text-[1.9rem] self-end col-start-1 col-end-3 text-center">Mail</p>
-        <div
-          class="col-start-3 bg-gray-800 min-w-[max-content] max-w-[10rem] flex p-[0.5rem] text-white rounded items-center justify-center">
-          rperezter@gmail.com</div>
-        <p class="text-[1.9rem] self-end col-start-1 col-end-3 text-center">Password</p>
-        <div
-          class="col-start-3 bg-gray-800 min-w-[max-content] max-w-[10rem] flex p-[0.5rem] text-white rounded items-center justify-center">
-          *********</div>
-      </div>
-    </div>
+                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh]">
+                  <div class="w-[50%] flex h-[20%] bg-gradient-to-r from-fuchsia-500 via-violet-400 to-sky-500 rounded border-[1px] justify-center">
+                    <div class="flex justify-between w-[85%] items-center text-[2rem] font-bold">#11
+                      <div class="bg-gray-900 rounded-full h-[4rem] w-[4rem] p-[1rem] flex items-center justify-center">
+                      <svg class="w-[20px] cursor-pointer col-start-3 mx:col-start-2 fill-current inline-block self-center" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_901_1558)"> <path d="M29 7H30C30.553 7 31 7.447 31 8V30C31 30.553 30.553 31 30 31H2C1.447 31 1 30.553 1 30V8C1 7.447 1.447 7 2 7H19M6 28V19H10V28M14 28V13H18V28M22 28V1H26V28" stroke="#ffffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_901_1558"> <rect width="32" height="32" fill="white"></rect> </clipPath> </defs> </g></svg>
+                    </div>
+                    </div>
+                    <div class="h-[8rem] w-[8rem] border-[5px] rounded-full absolute mt-[1rem]">
+                      
+                      <div class="bg-gray-300 flex h-[100%] w-[100%] rounded-full justify-center items-center">
+                        <div class="self-center text-center">img avatar</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" bg-gray-300 w-[50%] h-[35%] rounded flex mt-[2rem] border-[1px] flex-col items-center justify-center">
+                    <p class="text-[2rem] font-bold">Nombre de usuario</p>
+                    <p class="text-[1.4rem]">Description</p>
+                  </div>
+                  <div class=" bg-gray-300 w-[50%] h-[35%] rounded grid mt-[2rem] border-[1px] grid-cols-2 p-[1rem]">
+                    <div class="flex justify-center"><p class="text-[1.5rem] font-bold">Mail</p></div>
+                    <div  class="flex justify-center"> <p class="text-[1.5rem] font-bold">Password</p></div>
+                    <div class="flex justify-center"><p>rperezter@gmail.com</p></div>
+                    <div  class="flex justify-center"><p>****</p></div>
+                  
+                  </div>
+                    </div>
     <footerX class="row-start-4 row-end-5"></footerX>
   </div>
 </template>

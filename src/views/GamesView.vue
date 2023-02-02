@@ -536,7 +536,7 @@ window.onload = function () {
                             </div>
                      </div> -->
               <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gray-700 sm:w-[85vw] h-[70vh] justify-center">
+                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] h-[70vh] justify-center">
                     
                      <div class="w-[100%] h-[100%] self-center flex flex-col justify-center items-center z-2 ">
                             
