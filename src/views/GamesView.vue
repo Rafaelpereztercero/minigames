@@ -492,7 +492,7 @@ window.onload = function () {
                      <p class="col-start-5 self-center text-[2.5rem] text-[white]">Games</p>
 
               </div>
-              <!-- <div  id="cookieAlert" class="flex ">
+              <div  id="cookieAlert" class="flex ">
                      <div class="fixed z-50">
                                    <div 
                                           class="flex flex-col text-black items-center  w-[75%] bg-white p-[2rem] mt-[3rem] rounded">
@@ -534,46 +534,22 @@ window.onload = function () {
                                           </div>
                                    </div>
                             </div>
-                     </div> -->
-              <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] h-[70vh] justify-center">
-                    <div class="w-[20rem] h-[25rem] border-[1px] flex flex-col items-center bg-gray-400/50 rounded  p-[1rem]">
-                     <div class=" col-start-3 row-start-1 self-center ">
-                            <div id="carouselExampleControls" class="rounded carousel slide w-full h-[10.1rem] border-[10px] flex justify-center items-center border-[black]  "
-                                   data-bs-ride="carousel">
-                                   <div class="carousel-inner relative w-full overflow-hidden ">
-                                          <div id="first" class="carousel-item active relative float-left w-full">
-                                                 <img src="/mario.png" class="block w-full rounded"  />
-                                          </div>
-                                          <div id="second" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="block w-full rounded"  />
-                                          </div>
-                                          <div id="third" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="k w-full rounded" />
-                                          </div>
-                                   </div>
-                                 
-                            </div>
-                            <div class="text-center bg-gray-300 p-[0.6rem] mt-[0.5rem] rounded">
-                                   MiniGames
-                            </div>
-                            <div class="flex justify-between mt-[3rem] p-[1rem]">
-                     <button class="bg-red-600 font-bold p-[1rem] h-[3rem] w-[3rem] flex items-center justify-center rounded-full border-[1px]"
-                                          type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                          A
-                                         
-                                   </button>
-                                   <button class="bg-red-600 font-bold p-[1rem] h-[3rem] flex items-center justify-center w-[3rem] rounded-full border-[1px]"
-                                          type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                          B
-                                         
-                                   </button>
-                            </div>
                      </div>
+              <div
+                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2   rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] h-[70vh] items-center">
+                  
                     
-                    </div>
-                    
-                                   
+                                   <div class="w-[80%] h-[1rem] bg-white/60 rounded"></div>  
+                                   <div class="grid grid-cols-4 w-full p-[2rem]">
+                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
+                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
+                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
+                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
+
+
+
+
+                                   </div>    
                      
 
               </div>

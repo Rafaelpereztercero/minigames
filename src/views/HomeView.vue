@@ -21,28 +21,54 @@ import footerX from '../components/footer.vue'
               </div>
               <div
                      class="flex mt-[10%] sm:mt-0  w-full col-start-2 col-end-[-2] sm:col-end-2 p-[4rem]  row-start-2 row-end-2   rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh] justify-center">
-              <div class="grid grid-cols-4  w-[80%] rounded bg-gray-300 opacity-75 ">
-                     <div class="col-start-1 col-end-4 self-center border-[1px] flex flex-col p-[1rem]">
-                     
-                     <h2 class="text-[black] self-center font-[retro]">Mini Games</h2>
-                     <p class="text-[1rem] w-[50%] self-center text-[black] mt-[1rem]">In this website you'll be able to play some traditional games who's avarage duration does not reach 5 mins so you will have fun on your break times!</p>
-                     <div class="h-[auto] p-[1rem] mt-[2rem] self-center  rounded w-[12rem] bg-gradient-to-r from-fuchsia-500 via-violet-400 to-sky-500 border-[1px] text-[white] text-center cursor-pointer">Join Us!</div>
-              </div>
-                  <div class="w-full h-full col-start-4 border-[1px] rounded-r-lg flex justify-center  flex-col self-center">
-                     <div class="w-[66%] h-[66%] grid-cols-1 border-[2px] border-[black] rounded self-center rounded grid ">
-                            <div class="row-start-1 col-start-1 col-end-2 flex justify-center">
-                            <img  class= "w-[10rem] self-center" src="/mar_px.png"/>
-                     </div>
-                            <p class="row-start-1 col-start-1 text-[black] font-bold text-[1rem] self-end text-center p-[0.5rem] rounded-[12px, 10px]">Mini Games</p>
-                     </div>
-                     <div>
-                            <div class="h-[1rem]"></div>
-                            <div></div>
-                     </div>
-                  </div>
-               
+              <div class="grid grid-cols-2  row-start-1 row-end-3 grid-rows-6 w-[80%] rounded bg-gray-300/10 p-[0rem]">
+                     <div class="flex flex-col  grid-cols-2 col-start-1 p-[3rem]">
+                     <p class=" text-[2rem] font-bold">Minigames</p>
+                     <p class="mt-[1rem]">In this website you'll be able to play some traditional games who's avarage duration does not reach 5 mins so you will have fun on your break times!</p>
+                     <button class=" mt-[1rem] border-[1px] p-[1rem] rounded">Play Now!</button>
 
               </div>
+              <div class="flex flex-col items-center p-[2rem]">
+                     <p class=" text-[2rem] font-bold">Top Played</p>
+                     <div class="w-[13rem] h-[16rem] border-[1px] flex flex-col items-center bg-gray-400/30 rounded  p-[1rem]">
+                     <div class=" col-start-3 row-start-1 self-center ">
+                            <div id="carouselExampleControls" class="rounded carousel slide h-[max-content] w-full  border-[6px] flex justify-center items-center border-[black]  "
+                                   data-bs-ride="carousel">
+                                   <div class="object-cover carousel-inner realtive h-full w-full overflow-hidden ">
+                                          <div id="first" class="carousel-item active relative float-left w-full">
+                                                 <img src="/mario.png" class="object-cover"  />
+                                          </div>
+                                          <div id="second" class="carousel-item relative float-left w-full">
+                                                 <img src="/mario.png" class="object-cover"  />
+                                          </div>
+                                          <div id="third" class="carousel-item relative float-left w-full">
+                                                 <img src="/mario.png" class="object-cover" />
+                                          </div>
+                                   </div>
+                                 
+                            </div>
+                            <div class="text-center bg-gray-300 p-[0.6rem] mt-[0.5rem] rounded">
+                                   MiniGames
+                            </div>
+                            <div class="flex justify-between  p-[1rem]">
+                     <button class="bg-red-600 font-bold p-[1rem] h-[3rem] w-[3rem] flex items-center justify-center rounded-full border-[1px]"
+                                          type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                          A
+                                         
+                                   </button>
+                                   <button class="bg-red-600 font-bold p-[1rem] h-[3rem] flex items-center justify-center w-[3rem] rounded-full border-[1px]"
+                                          type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                          B
+                                         
+                                   </button>
+                            </div>
+                     </div>
+                    
+                    </div>
+              </div>
+           
+              </div>
+              
               </div>
               <footerX class="row-start-4 row-end-5"></footerX>
        </div>
