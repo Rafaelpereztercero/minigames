@@ -492,7 +492,7 @@ window.onload = function () {
                      <p class="col-start-5 self-center text-[2.5rem] text-[white]">Games</p>
 
               </div>
-              <div  id="cookieAlert" class="flex ">
+              <!-- <div  id="cookieAlert" class="flex ">
                      <div class="fixed z-50">
                                    <div 
                                           class="flex flex-col text-black items-center  w-[75%] bg-white p-[2rem] mt-[3rem] rounded">
@@ -534,21 +534,21 @@ window.onload = function () {
                                           </div>
                                    </div>
                             </div>
-                     </div>
+                     </div> -->
               <div
                      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2   rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] h-[70vh] items-center">
                   
                     
-                                   <div class="w-[80%] h-[1rem] bg-white/60 rounded"></div>  
-                                   <div class="grid grid-cols-4 w-full p-[2rem]">
-                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
-                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
-                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
-                                          <div class=" w-[8rem] h-[8rem] border-[1px] "></div>
-
-
-
-
+                                   <input  type="text" class="w-[80%] h-[2rem] text-center g-white/60 rounded" placeholder="Type a game" >
+                                   <div class="grid grid-cols-4 w-full h-full   content-around p-[2rem] bg-gray-300/20 rounded">
+                                          <div class=" justify-self-center col-start-1 row-start-1  w-[8rem] h-[8rem] border-[1px] rounded"></div>
+                                          <div class=" justify-self-center col-start-2  row-start-1 w-[8rem] h-[8rem] border-[1px] rounded "></div>
+                                          <div class=" justify-self-center col-start-3  row-start-1 w-[8rem] h-[8rem] border-[1px] rounded "></div>
+                                          <div class=" justify-self-center col-start-4 row-start-1 w-[8rem] h-[8rem] border-[1px] rounded"></div> 
+                                          <div class=" justify-self-center col-start-1  row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
+                                          <div class=" justify-self-center col-start-2 row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
+                                          <div class=" justify-self-center col-start-3 row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
+                                          <div class=" justify-self-center col-start-4 row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
                                    </div>    
                      
 

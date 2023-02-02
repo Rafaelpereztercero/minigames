@@ -18,8 +18,15 @@ import footerX from '../components/footer.vue'
 
               </div>
               <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh]">
-                     </div>
+                     class="grid mt-[10%] sm:mt-0  grid-cols-5 w-full col-start-2 col-end-[-2] sm:col-end-2 p-[2rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh] grid-rows-5">
+              <div class="h-full row-start-1 col-start-1 col-end-3 row-end-3 w-full border-[1px] rounded bg-gray-200/10">
+              </div> 
+              <div class="h-full w-full row-start-1 row-end-3 col-start-4 col-end-6 border-[1px] rounded bg-gray-200/10">
+              </div> <div class="h-full row-start-4 row-end-6 col-start-1 col-end-3 w-full border-[1px] rounded bg-gray-200/10">
+              </div> <div class="h-full  row-start-4 row-end-6  col-start-4 col-end-6 w-full border-[1px] rounded bg-gray-200/10">
+              </div>
+        
+              </div>
                          <footerX class="row-start-4 row-end-5"></footerX>
 
 </div>

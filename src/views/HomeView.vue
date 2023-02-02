@@ -25,7 +25,7 @@ import footerX from '../components/footer.vue'
                      <div class="flex flex-col  grid-cols-2 col-start-1 p-[3rem]">
                      <p class=" text-[2rem] font-bold">Minigames</p>
                      <p class="mt-[1rem]">In this website you'll be able to play some traditional games who's avarage duration does not reach 5 mins so you will have fun on your break times!</p>
-                     <button class=" mt-[1rem] border-[1px] p-[1rem] rounded">Play Now!</button>
+                     <button class="transition ease-in-out delay-150 duration-200 hover:text-[black] hover:bg-gradient-to-r from-fuchsia-500 via-violet-400 to-sky-500 mt-[1rem] border-[1px] p-[1rem] rounded">Play Now!</button>
 
               </div>
               <div class="flex flex-col items-center p-[2rem]">
