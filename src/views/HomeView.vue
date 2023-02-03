@@ -20,15 +20,15 @@ import footerX from '../components/footer.vue'
 
               </div>
               <div
-                     class="flex mt-[10%] sm:mt-0  w-full col-start-2 col-end-[-2] sm:col-end-2 p-[4rem]  row-start-2 row-end-2   rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh] justify-center">
-              <div class="grid grid-cols-2  row-start-1 row-end-3 grid-rows-6 w-[80%] rounded bg-gray-300/10 p-[0rem]">
+                     class="flex mt-[10%] sm:mt-0  w-full col-start-2 col-end-[-2] sm:col-end-2 p-[0] sm:p-[4rem]  row-start-2 row-end-2   rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] min-h-fit mg:h-[70vh] justify-center">
+              <div class="grid mg:grid-cols-2  grid-cols-1 row-start-1 row-end-3 mg:grid-rows-6 w-[100%] mg:w-[80%] rounded bg-gray-300/10 p-[0rem]">
                      <div class="flex flex-col  grid-cols-2 col-start-1 p-[3rem]">
                      <p class=" text-[2rem] font-bold">Minigames</p>
                      <p class="mt-[1rem]">In this website you'll be able to play some traditional games who's avarage duration does not reach 5 mins so you will have fun on your break times!</p>
                      <button class="transition ease-in-out delay-150 duration-200 hover:text-[black] hover:bg-gradient-to-r from-fuchsia-500 via-violet-400 to-sky-500 mt-[1rem] border-[1px] p-[1rem] rounded">Play Now!</button>
 
               </div>
-              <div class="flex flex-col items-center p-[2rem]">
+              <div class="flex flex-col items-center p-[2rem] mt-[-4rem] sm:mt-0 ">
                      <p class=" text-[2rem] font-bold">Top Played</p>
                      <div class="w-[13rem] h-[16rem] border-[1px] flex flex-col items-center bg-gray-400/30 rounded  p-[1rem]">
                      <div class=" col-start-3 row-start-1 self-center ">

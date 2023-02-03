@@ -29,8 +29,8 @@ export default {
                                    if(document.cookie == ("auth="+data[x].cookie)){
                                          document.getElementById("user").innerHTML = ` <img class="self-center w-[10rem]" src="/Gameboy.png" />
           
-                                        <div class="flex self-center mt-[-1rem] w-[4rem] h-[4rem]">
-                                         <img id="pUser" class=" rounded  cursor-pointer   self-center w-[4rem] " src=${data[x].photo}>
+                                        <div class="flex self-center mt-[-1rem] w-[4rem] h-[4rem] overflow-hidden">
+                                         <img id="pUser" class=" rounded  cursor-pointer   self-center object-cover h-[4rem] w-[4rem]" src=${data[x].photo}>
                                          <button id="logout" class=" hidden rounded  self-center h-[4rem] border-[1px] w-[4rem]">Logout</button>
                                          </div>`
           document.getElementById("logout").addEventListener("click",function() {

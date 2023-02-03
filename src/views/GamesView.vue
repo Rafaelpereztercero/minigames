@@ -570,15 +570,48 @@ window.onload = function () {
                     
                                    <input  type="text" class="w-[80%] h-[2rem] text-center g-white/60 rounded" placeholder="Type a game" >
                                    <div class="grid grid-cols-4 w-full h-full   content-around p-[2rem] bg-gray-300/20 rounded">
-                                          <div class=" justify-self-center col-start-1 row-start-1  w-[8rem] h-[8rem] border-[1px] rounded"></div>
-                                          <div class=" justify-self-center col-start-2  row-start-1 w-[8rem] h-[8rem] border-[1px] rounded "></div>
-                                          <div class=" justify-self-center col-start-3  row-start-1 w-[8rem] h-[8rem] border-[1px] rounded "></div>
-                                          <div class=" justify-self-center col-start-4 row-start-1 w-[8rem] h-[8rem] border-[1px] rounded"></div> 
-                                          <div class=" justify-self-center col-start-1  row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
-                                          <div class=" justify-self-center col-start-2 row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
-                                          <div class=" justify-self-center col-start-3 row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
-                                          <div class=" justify-self-center col-start-4 row-start-2 w-[8rem] h-[8rem] border-[1px] rounded"></div>
-                                   </div>    
+                                          <div class="flex flex-col items-center justify-between justify-self-center col-start-1 row-start-1  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+                                                 <div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+                                                 <p class="text-[1.5rem] justify-self-end">Tetris</p>
+                                          </div>
+                                          <div class="flex flex-col items-center justify-between justify-self-center  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+<div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+<p class="text-[1.5rem] justify-self-end">Tetris</p>
+</div>
+<div class="flex flex-col items-center justify-between justify-self-center  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+<div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+<p class="text-[1.5rem] justify-self-end">Tetris</p>
+</div>
+<div class="flex flex-col items-center justify-between justify-self-center  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+<div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+<p class="text-[1.5rem] justify-self-end">Tetris</p>
+</div>
+<div class="flex flex-col items-center justify-between justify-self-center  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+<div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+<p class="text-[1.5rem] justify-self-end">Tetris</p>
+</div>
+<div class="flex flex-col items-center justify-between justify-self-center  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+<div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+<p class="text-[1.5rem] justify-self-end">Tetris</p>
+</div>
+<div class="flex flex-col items-center justify-between justify-self-center  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+<div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+<p class="text-[1.5rem] justify-self-end">Tetris</p>
+</div>
+<div class="flex flex-col items-center justify-between justify-self-center  w-[10rem] h-[10rem] border-[1px] rounded p-[0.5rem]">
+
+<div class="w-[80%] h-[80%] border-[1px] rounded"></div>
+<p class="text-[1.5rem] justify-self-end">Tetris</p>
+</div>
+
+                                   </div>
                      
 
               </div>
