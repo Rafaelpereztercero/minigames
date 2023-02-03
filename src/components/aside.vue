@@ -2,14 +2,59 @@
 import router from '../router'
 
 export default {
+  name:"datos",
   computed:{
      routeName(){
        return this.$route.name
     },
   },
+  data() {
+              return {
+                     users: []
+              }
+       },
+  
+  created() {
+                     if (document.cookie == "") {
+                            return this.users = []
+                     }
+                    
+                    
+                     fetch("http://localhost:3000/players")
+                     .then(response => response.json())
+                     .then(data =>   {
+                            
+                            for(let x = 0; x< data.length;x++) {
+                                  
+                                   if(document.cookie == ("auth="+data[x].cookie)){
+                                         document.getElementById("user").innerHTML = ` <img class="self-center w-[10rem]" src="/Gameboy.png" />
+          
+                                        <div class="flex self-center mt-[-1rem] w-[4rem] h-[4rem]">
+                                         <img id="pUser" class=" rounded  cursor-pointer   self-center w-[4rem] " src=${data[x].photo}>
+                                         <button id="logout" class=" hidden rounded  self-center h-[4rem] border-[1px] w-[4rem]">Logout</button>
+                                         </div>`
+          document.getElementById("logout").addEventListener("click",function() {
+            document.cookie = "auth="
+            window.location.href = "http://localhost:5173/Home"
+          })
+          document.getElementById("pUser").addEventListener("click",function() {
+            document.getElementById("logout").classList.remove("hidden")
+            document.getElementById("pUser").classList.add("hidden")
+          })
+          document.getElementById("noneUser").classList.add("hidden")
+                                          return this.users = data[x]
+}
+                            }
+                           
+                     } )
+                    
+              },
   methods: {
     load(t) {
       router.push(t)
+    },
+    try() {
+      alert("a")
     }
   },
   screen: {
@@ -37,12 +82,16 @@ export default {
       <div style="min-height: 95vh" 
         class="flex rounded-br-lg w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col  ">
         <div class="flex flex-col text-[1.2rem] text-blue-400 self-center font-bold">
+          <div id="user" class="flex flex-col">
           <img class="self-center w-[10rem]" src="/Gameboy.png" />
-          <div class="flex flex-col mx:flex-row flex-wrap justify-center items-center mx:justify-between mx:items-between p-[0.4rem] text-[0.8rem] ">
+        </div>
+
+          <div id="noneUser" class="flex flex-col mx:flex-row flex-wrap justify-center items-center mx:justify-between mx:items-between p-[0.4rem] text-[0.8rem] ">
             <div v-on:click="load('Login')" class="text-[white] cursor-pointer hover:bg-gray-900 rounded w-[4rem] text-center border-solid border-white border-[1px] p-[0.2rem] bg-gradient-to-br from-current via-purple-900 to-rose-600">Login</div>
             <div v-on:click="load('Register')" class="text-[white] cursor-pointer mt-[1rem] mx:mt-[0] hover:bg-gray-900 rounded text-center w-[4rem] border-solid border-white border-[1px] p-[0.2rem] bg-gradient-to-br from-current via-purple-900 to-rose-600">Register
             </div>
           </div>
+          
         </div>
       
         <div class="flex flex-no-wrap flex-col justify-between h-[20rem] mt-[1rem]">

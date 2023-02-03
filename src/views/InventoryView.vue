@@ -5,7 +5,37 @@ import asideY from '../components/asideY.vue'
 
 
 </script>
+<script>
+export default {
+       data() {
+              return {
+                     users: []
+              }
+       },
+       created() {
+              if (document.cookie == "") {
+                     return this.users = []
+              }
 
+              fetch("http://localhost:3000/players")
+                     .then(response => response.json())
+                     .then(data => {
+
+                            for (let x = 0; x < data.length; x++) {
+                                   if (document.cookie == ("auth=" + data[x].cookie)) {
+
+                                          return this.users = data[x]
+                                   }
+                            }
+
+                     })
+
+       },
+       methods: {
+
+       }
+}
+</script>
 <template>
        <div class="grid grid-cols-8 grid-rows-[200px 300px]">
               <asideX class="row-start-1 row-end-3">

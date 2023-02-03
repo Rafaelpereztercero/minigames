@@ -8,6 +8,35 @@ import footerX from '../components/footer.vue'
 </script> 
 <!-- GAMES DEFS -->
 <script>
+export default {
+       data() {
+              return {
+                     users: []
+              }
+       },
+       created() {
+              if (document.cookie == "") {
+                     return this.users = []
+              }
+
+              fetch("http://localhost:3000/players")
+                     .then(response => response.json())
+                     .then(data => {
+
+                            for (let x = 0; x < data.length; x++) {
+                                   if (document.cookie == ("auth=" + data[x].cookie)) {
+
+                                          return this.users = data[x]
+                                   }
+                            }
+
+                     })
+
+       },
+       methods: {
+
+       }
+}
 function setWin(classSet) {
        if (document.getElementById('1ra').classList.contains(classSet) && document.getElementById('5ra').classList.contains(classSet) && document.getElementById('9ra').classList.contains(classSet)) {
               return true

@@ -52,7 +52,11 @@ export default {
       const user = {
         name: element.name,
         password: element.password,
-        imageFile: element.imageFile,
+        nfts: element.nfts,
+        mail:element.mail,
+        description:element.description,
+        photo:element.photo,
+        coins:element.coins,
         cookie: cookie,
         points: element.points,
         id: element.id,
@@ -67,6 +71,8 @@ export default {
 
       // Awaiting response.json()
       const resData = await response.json();
+      window.location.href = "http://localhost:5173/Home"
+
       return;
     }
   });

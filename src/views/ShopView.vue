@@ -3,7 +3,37 @@ import asideX from '../components/aside.vue'
 import asideY from '../components/asideY.vue'
 import footerX from '../components/footer.vue'
 </script> 
+<script>
+export default {
+       data() {
+              return {
+                     users: []
+              }
+       },
+       created() {
+              if (document.cookie == "") {
+                     return this.users = []
+              }
 
+              fetch("http://localhost:3000/players")
+                     .then(response => response.json())
+                     .then(data => {
+
+                            for (let x = 0; x < data.length; x++) {
+                                   if (document.cookie == ("auth=" + data[x].cookie)) {
+
+                                          return this.users = data[x]
+                                   }
+                            }
+
+                     })
+
+       },
+       methods: {
+
+       }
+}
+</script>
 <template>
  <div class="grid grid-cols-8 grid-rows-[200px 300px]">
               <asideX class="row-start-1 row-end-3">
@@ -22,7 +52,7 @@ import footerX from '../components/footer.vue'
         <div
           class="text-[1.2rem] self-end flex bg-gray-900 rounded p-[1rem] h-[3rem] justify-between"
         >
-          <div class="font-bold self-center text-center text-[white]">1</div>
+          <div class="font-bold self-center text-center text-[white]">{{ this.users.coins }}</div>
           <img class="w-[4rem] self-center" src="/star.png" />
         </div>
       </div>
