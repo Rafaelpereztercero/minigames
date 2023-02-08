@@ -62,13 +62,13 @@ export default {
                             :src=this.users.photo>
 
                      <div
-                            class="grid grid-cols-3 h-full justify-self-center row-start-1 col-start-1 col-end-3 row-end-3 w-[80%] border-[1px] rounded bg-gray-200/10">
-                            <div class="justify-self-center self-center col-start-1 w-[5rem] h-[5rem] border-[1px]">
-
-                            </div>
+                            class="grid grid-cols-5 h-full justify-self-center row-start-1 col-start-1 col-end-3 row-end-3 w-[80%] border-[1px] rounded bg-gray-200/10">
+                            
+                                   <img class=" bg-white/30 col-start-1 col-end-3 object-cover h-full w-full justify-self-center self-center border-[1px]" src="/star.png">
+                           
                             <div
-                                   class="justify-self-center col-start-2 col-end-4 flex flex-col justify-around  h-[100%]">
-                                   <p class="text-[2rem] font-bold w-[100%]">Coins</p>
+                                   class="bg-gray-600/40 justify-self-center w-full h-full col-start-3 col-end-6 flex flex-col justify-around  h-[100%]">
+                                   <p class="text-[2rem] font-bold w-[100%] text-center">Coins</p>
                                    <p class="self-center text-[2rem] font-bold ">{{ this.users.coins }}</p>
                             </div>
                      </div>
