@@ -2,6 +2,7 @@
 import asideX from '../components/aside.vue'
 import asideY from '../components/asideY.vue'
 import footerX from '../components/footer.vue'
+import router from '../router';
 
 
 </script>
@@ -71,7 +72,7 @@ export default {
 
       // Awaiting response.json()
       const resData = await response.json();
-      window.location.href = "http://localhost:5173/Home"
+      router.push("/")
 
       return;
     }

@@ -15,6 +15,7 @@ export default {
               if (document.cookie == "") {
                      return this.users = []
               }
+       
 
               fetch("http://localhost:3000/players")
                      .then(response => response.json())
@@ -42,7 +43,17 @@ export default {
 
        }
 }
+window.onload = function() {
+document.getElementById("test").addEventListener("click",function() {
+       document.getElementById("test").classList.add("w-[20%]")
+})
+document.getElementById("test").classList.add("w-[20%]")
+
+}
 </script>
+
+
+
 <template>
 
        <div class="grid grid-cols-8 grid-rows-[200px 300px]">
@@ -58,54 +69,17 @@ export default {
               </div>
               <div
                      class="grid mt-[10%] sm:mt-0  grid-cols-5 w-full col-start-2 col-end-[-2] sm:col-end-2 p-[2rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh] grid-rows-5">
-                     <img class="col-start-1 col-end-6  bg-gray-400/20 justify-self-center object-cover h-[8rem] w-[8rem] border-[5px] flex justify-center items-center rounded-full  overflow-hidden"
-                            :src=this.users.photo>
-
-                     <div
-                            class="grid grid-cols-5 h-full justify-self-center row-start-1 col-start-1 col-end-3 row-end-3 w-[80%] border-[1px] rounded bg-gray-200/10">
-                            
-                                   <img class=" bg-white/30 col-start-1 col-end-3 object-cover h-full w-full justify-self-center self-center border-[1px]" src="/star.png">
-                           
-                            <div
-                                   class="bg-gray-600/40 justify-self-center w-full h-full col-start-3 col-end-6 flex flex-col justify-around  h-[100%]">
-                                   <p class="text-[2rem] font-bold w-[100%] text-center">Coins</p>
-                                   <p class="self-center text-[2rem] font-bold ">{{ this.users.coins }}</p>
+                   
+                     
+   
+                            <div class="h-[20rem] w-[20rem] rounded-[100%] overflow-hidden grid ">
+                            <div id="test" class="flex col-start-1 row-start-1 justify-self-start align-self-center  items-center justify-center h-full w-full  bg-white transition-width duration-[1000ms] ease"> 
                             </div>
+                            <div class="h-[90%] rounded-full col-start-1 row-start-1 justify-self-center align-self-center w-[90%] bg-black text-white  items-center flex jsutify-center"><p class="text-[3rem] font-bold self-center text-center w-[100%]">20%</p></div>
+
                      </div>
-                     <div
-                            class="grid grid-cols-3 h-full w-[80%] justify-self-center row-start-1 row-end-3 col-start-4 col-end-6 border-[1px] rounded bg-gray-200/10">
-                            <div class="justify-self-center self-center col-start-1 w-[5rem] h-[5rem] border-[1px]">
-
-                            </div>
-                            <div
-                                   class="justify-self-center col-start-2 col-end-4 flex flex-col justify-around  h-[100%]">
-                                   <p class="text-[2rem] font-bold w-[100%]">Points</p>
-                                   <p class="self-center text-[2rem] font-bold ">{{ this.users.points }}</p>
-                            </div>
-                     </div>
-                     <div
-                            class="grid grid-cols-3 h-full row-start-4 justify-self-center row-end-6 col-start-1 col-end-3 w-[80%] border-[1px] rounded bg-gray-200/10">
-                            <div class="justify-self-center self-center col-start-1 w-[5rem] h-[5rem] border-[1px]">
-
-                            </div>
-                            <div
-                                   class="justify-self-center col-start-2 col-end-4 flex flex-col justify-around  h-[100%]">
-                                   <p class="text-[2rem] font-bold w-[100%]">Most played</p>
-                                   <p class="self-center text-[2rem] font-bold ">{{ this.stats.most_played }}</p>
-                            </div>
-                     </div>
-                     <div
-                            class="grid grid-cols-3 h-full  row-start-4 row-end-6 justify-self-center  col-start-4 col-end-6 w-[80%] border-[1px] rounded bg-gray-200/10">
-                            <div class="justify-self-center self-center col-start-1 w-[5rem] h-[5rem] border-[1px]">
-
-                            </div>
-                            <div
-                                   class="justify-self-center col-start-2 col-end-4 flex flex-col justify-around  h-[100%]">
-                                   <p class="text-[2rem] font-bold w-[100%]">Games Played</p>
-                                   <p class="self-center text-[2rem] font-bold ">{{ this.stats.games }}</p>
-                            </div>
-                     </div>
-
+                     
+                   
               </div>
               <footerX class="row-start-4 row-end-5"></footerX>
 

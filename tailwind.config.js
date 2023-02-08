@@ -38,7 +38,11 @@ module.exports = {
 
       },
     
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'width': 'width'
+    },
+    },
   },
   plugins: [Myclass],
 }

@@ -152,10 +152,10 @@ export default {
             class="group h-[11rem] w-[8rem] [perspective:1000px] rounded"
           >
             <div
-              class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+              class="relative h-full w-full  bg-black/90 border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
             >
               <div class="flex items-center justify-center inset-0">
-               <p class="text-[5rem]  text-center">?</p>
+               <p class="text-[5rem] text-white/50 text-center">?</p>
               </div>
               <div
                 class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
