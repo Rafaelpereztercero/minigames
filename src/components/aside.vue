@@ -92,10 +92,10 @@ export default {
 
             <div id="noneUser"
               class="flex flex-col mx:flex-row flex-wrap justify-center items-center mx:justify-between mx:items-between p-[0.4rem] text-[0.8rem] ">
-              <div v-on:click="load('Login')"
+              <div router-link to="/Login"
                 class="text-[white] cursor-pointer hover:bg-gray-900 rounded w-[4rem] text-center border-solid border-white border-[1px] p-[0.2rem] bg-gradient-to-br from-current via-purple-900 to-rose-600">
                 Login</div>
-              <div v-on:click="load('Register')"
+              <div router-link to="/Register"
                 class="text-[white] cursor-pointer mt-[1rem] mx:mt-[0] hover:bg-gray-900 rounded text-center w-[4rem] border-solid border-white border-[1px] p-[0.2rem] bg-gradient-to-br from-current via-purple-900 to-rose-600">
                 Register
               </div>
@@ -104,7 +104,7 @@ export default {
           </div>
 
           <div class="flex flex-no-wrap flex-col justify-between h-[20rem] mt-[1rem]">
-            <div v-on:click="load('Home')"
+            <div router-link to="/Home"
               class=" hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white grid grid-cols-6 items-center  ">
               <svg class="w-[20px] col-start-3 mx:col-start-2 fill-current inline-block self-center" fill="#ffffff"
                 version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -129,7 +129,7 @@ export default {
 
               <div class="self-center items-center  col-start-4  mx:inline hidden">Home</div>
             </div>
-            <div v-on:click="load('Games')"
+            <div router-link to="/Games"
               class=" hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white grid grid-cols-6 items-center  ">
               <svg class="w-[20px] col-start-3 mx:col-start-2 fill-current inline-block self-center" fill="#ffffff"
                 viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +152,7 @@ export default {
               </svg>
               <div class="self-center items-center col-start-4 mx:inline hidden">Games</div>
             </div>
-            <div v-on:click="load('Shop')"
+            <div router-link to="/Shop"
               class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white grid grid-cols-6 items-center  ">
               <svg class="w-[20px] col-start-3 mx:col-start-2 fill-current inline-block self-center" fill="#ffffff"
                 version="1.1" id="XMLID_269_" xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +177,7 @@ export default {
               <div class="self-center items-center col-start-4  mx:inline hidden">Shop</div>
 
             </div>
-            <div v-on:click="load('Inventory')"
+            <div router-link to="/Inventory"
               class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white grid grid-cols-6 items-center ">
               <svg class="w-[20px] col-start-3 mx:col-start-2 fill-current inline-block self-center" version="1.1"
                 id="VAULT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -200,7 +200,7 @@ export default {
               </svg>
               <div class="self-center items-center text-center col-start-4  mx:inline hidden">Inventory</div>
             </div>
-            <div v-on:click="load('Stats')"
+            <div router-link to="/Stats"
               class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white grid grid-cols-6 items-center  ">
               <svg class="w-[20px] col-start-3 mx:col-start-2 fill-current inline-block self-center" viewBox="0 0 32 32"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -222,7 +222,7 @@ export default {
               <div class="self-center items-center col-start-4  mx:inline hidden">Stats</div>
             </div>
 
-            <div v-on:click="load('Profile')" id="Profile"
+            <div router-link to="/Profile" id="Profile"
               class="hover:bg-gray-900 rounded p-[1rem] cursor-pointer self-center jsutify-center mx:justfy-between w-[75%] text-white grid grid-cols-6 items-center ">
               <svg class="w-[20px] col-start-3 mx:col-start-2 fill-current inline-block self-center" fill="#000000"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
