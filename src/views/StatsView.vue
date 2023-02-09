@@ -12,32 +12,31 @@ export default {
               }
        },
        created() {
-              if (document.cookie == "") {
-                     return this.users = []
-              }
-       
-
-              fetch("http://localhost:3000/players")
+                     if (document.cookie == "") {
+                            return this.users = []
+                     }
+                    
+                    
+                     fetch("http://localhost:3000/players?cookie=" + document.cookie.substring(5,document.cookie.length))
                      .then(response => response.json())
                      .then(data => {
-
-                            for (let x = 0; x < data.length; x++) {
-                                   if (document.cookie == ("auth=" + data[x].cookie)) {
-
-                                           this.users = data[x]
-                                           fetch("http://localhost:3000/stats/"+this.users.name) 
-                            .then(response => response.json())
-                            
-                            .then(data => this.stats = data)
+                            let x= 0
+                           if(data[x]) {
+                            this.users = data[x]
+                            fetch(`http://localhost:3000/stats?=user=${data[x].username}`)
+                            .then(response=>response.json())
+                            .then (data2 => {
+                                   let x = 0
+                                   if(data2[x]) {
+                                          console.log(data2[x])
+                                   return this.stats= data2[x]
                                    }
-                            }
-                           
-
+                            })
+                           }
 
                      })
-              
-
-       },
+                    
+              },
 
        methods: {
 

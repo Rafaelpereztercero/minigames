@@ -10,25 +10,24 @@ export default {
                      users: []
               }
        },
+       
        created() {
-              if (document.cookie == "") {
-                     return this.users = []
-              }
-
-              fetch("http://localhost:3000/players")
+                     if (document.cookie == "") {
+                            return this.users = []
+                     }
+                    
+                    
+                     fetch("http://localhost:3000/players?cookie=" + document.cookie.substring(5,document.cookie.length))
                      .then(response => response.json())
                      .then(data => {
-
-                            for (let x = 0; x < data.length; x++) {
-                                   if (document.cookie == ("auth=" + data[x].cookie)) {
-
-                                          return this.users = data[x]
-                                   }
-                            }
+                            let x= 0
+                           if(data[x]) {
+                            return this.users = data[x]
+                           }
 
                      })
-
-       },
+                    
+              },
        methods: {
 
        }

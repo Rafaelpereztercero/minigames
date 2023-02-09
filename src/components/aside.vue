@@ -19,14 +19,14 @@ export default {
       return this.users = []
     }
 
-
-    fetch("http://localhost:3000/players")
+    
+    fetch("http://localhost:3000/players?cookie=" + document.cookie.substring(5,document.cookie.length))
       .then(response => response.json())
       .then(data => {
 
-        for (let x = 0; x < data.length; x++) {
-
-          if (document.cookie == ("auth=" + data[x].cookie)) {
+      
+        let x = 0
+          if (data[x]) {
             document.getElementById("user").innerHTML = ` <img class="self-center w-[10rem]" src="/Gameboy.png" />
           
                                         <div  id="pUser" class="flex self-center mt-[-1rem] w-[4rem] h-[4rem] overflow-hidden">
@@ -49,7 +49,7 @@ export default {
             document.getElementById("noneUser").classList.add("hidden")
             return this.users = data[x]
           }
-        }
+        
 
       })
 
@@ -58,9 +58,7 @@ export default {
     load(t) {
       router.push(t)
     },
-    try() {
-      alert("a")
-    }
+    
   },
   screen: {
     'mz': '1280px',
