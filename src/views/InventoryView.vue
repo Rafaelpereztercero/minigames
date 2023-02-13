@@ -55,46 +55,27 @@ export default {
                      <div class="flex w-[75%] flex-col text-[2rem] text-[white] ">
                            
                             <div id="card-container" class="flex flex-wrap ">
-                                   <div
-                                          class=" flex flex-col p-[0.5rem] w-[7rem] h-[10rem] border-[solid] border-[2px] rounded-br-lg border-[black] bg-indigo-900">
-                                          <img class="rounded-br-lg justify-self-center bg-gray-900 h-[5rem] w-[100%] border-[black] border-[5px]"
-                                                 src="/mario.png">
-                                          <div
-                                                 class="text-black text-[0.8rem] h-[1rem] mt-[0.3rem] flex items-center justify-center rounded bg-gray-400">
-                                                 Mario</div>
-                                          <div class="flex justify-between mt-[1rem]">
-                                                 <div
-                                                        class=" h-[2rem] w-[2rem] border-[solid] border-[2px] rounded-[100%] border-[black]">
-                                                 </div>
 
-                                                 <div class="mt-[0.4rem]   grid grid-cols-[10px 40px 10px]">
-
-                                                        <div
-                                                               class="self-center col-start-1 col-end-1 row-start-2 row-end-2 mr-[0.2rem] h-[0.4rem] w-[0.8rem] border-[1px] bg-black">
-                                                        </div>
-                                                        <div
-                                                               class="self-center col-start-3 col-end-3 row-start-2 row-end-2  ml-[0.2rem] h-[0.4rem] w-[0.8rem] border-[1px] bg-black">
-                                                        </div>
-                                                        <div
-                                                               class="self-center col-start-2 col-end-2 row-start-1 row-end-1 mb-[0.2rem] h-[0.8rem] w-[0.4rem] border-[1px] bg-black">
-                                                        </div>
-                                                        <div
-                                                               class="self-center col-start-2 col-end-2 row-start-3 row-end-3 mt-[0.2rem] h-[0.8rem] w-[0.4rem] border-[1px] bg-black">
-                                                        </div>
-
-                                                 </div>
-
+                                   <div class="hover:translate-y-[-30px] duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
+                                          <div class="pl-[1.5rem] pr-[1.5rem] pt-[1.5rem] flex justify-center content-center w-[100%] h-[60%]">
+                                                 <div class=" border-[1px] w-[100%] h-[100%] "></div>
+                                                 
                                           </div>
-
+                                          <div class="w-[100%] text-center text-[2rem]">Mario</div>
+                                          <div class="flex justify-between pr-[1rem] pl-[1rem]">
+                                                 <div class="grid grid-cols-1">
+                                                        <div class="row-start-1 row-end-2 bg-gray-800 self-center  col-start-1 rounded w-[2.3rem] h-[0.7rem]"></div>
+                                                        <div class="row-start-1 row-end-2 self-center bg-gray-800 col-start-1 rounded justify-self-center h-[2.3rem] w-[0.7rem]"></div>
+                                                 </div>
+                                                        <div class="h-[3rem] w-[3rem] border-[1px] bg-green-500/30 rounded-full"></div>
+                                                 </div>
                                    </div>
-
-
-
+                                  
 
 
 
                             </div>
-                            <div class="self-end mt-[10rem] w-[1rem]">
+                            <div class="self-end  w-[1rem]">
                             <svg class="w-[100px] cursor-pointer border-[1px] rounded p-[1rem] col-start-3 mx:col-start-2 fill-current inline-block self-center" fill="#ffffff" version="1.1" id="XMLID_269_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g id="shop-cart"><g><circle cx="9" cy="21" r="2"></circle></g> <g><circle cx="19" cy="21" r="2"></circle></g> <g><path d="M21,18H7.2l-4-16H0V0h4.8l0.8,3H24l-3.2,11H8.3l0.5,2H21V18z M7.8,12h11.5l2-7H6L7.8,12z"></path></g></g></g></svg>
                      </div>
                      </div>
