@@ -859,7 +859,7 @@ window.onload = function () {
                                    class="grid-cols-1 grid cursor-pointer overflow-hidden h-[12rem]  duration-[1000ms] w-[12rem]  rounded">
                                    <img src="/mario.png" class="object-cover w-full h-full" />
                                    <div id="1a"
-                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[5000ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
+                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[500ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
                                           Triqui
                                    </div>
                             </div>
@@ -867,7 +867,7 @@ window.onload = function () {
                                    class="grid-cols-1 grid cursor-pointer overflow-hidden  h-[12rem]  duration-[1000ms] w-[12rem] rounded">
                                    <img src="/mario.png" class="object-cover w-full h-full" />
                                    <div id="2a"
-                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[5000ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
+                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[500ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
                                           Speedly
                                    </div>
                             </div>
@@ -875,7 +875,7 @@ window.onload = function () {
                                    class="grid-cols-1 grid cursor-pointer overflow-hidden  h-[12rem]  duration-[1000ms] w-[12rem] rounded">
                                    <img src="/mario.png" class="object-cover w-full h-full" />
                                    <div id="3a"
-                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[5000ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
+                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[500ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
                                           Memory
                                    </div>
                             </div>
@@ -883,7 +883,7 @@ window.onload = function () {
                                    class="grid-cols-1 grid cursor-pointer overflow-hidden  h-[12rem]  duration-[1000ms] w-[12rem] rounded">
                                    <img src="/mario.png" class="object-cover w-full h-full" />
                                    <div id="4a"
-                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[5000ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
+                                          class="self-end justify-self-center flex justify-center items-center transition-height duration-[500ms] ease w-[12rem] h-[3rem] rounded z-50 bg-violet-600/80 text-[2rem] text-center text-white absolute">
                                           Bombs.io
                                    </div>
                             </div>

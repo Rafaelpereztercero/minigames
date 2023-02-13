@@ -56,9 +56,9 @@ export default {
                            
                             <div id="card-container" class="flex flex-wrap ">
 
-                                   <div class="hover:translate-y-[-30px] duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
+                                   <div class="shadow-xl hover:translate-y-[-30px] duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
                                           <div class="pl-[1.5rem] pr-[1.5rem] pt-[1.5rem] flex justify-center content-center w-[100%] h-[60%]">
-                                                 <div class=" border-[1px] w-[100%] h-[100%] "></div>
+                                                 <img src="/mario.png" class=" border-[3px] object-cover w-[100%] h-[100%] ">
                                                  
                                           </div>
                                           <div class="w-[100%] text-center text-[2rem]">Mario</div>
@@ -67,7 +67,7 @@ export default {
                                                         <div class="row-start-1 row-end-2 bg-gray-800 self-center  col-start-1 rounded w-[2.3rem] h-[0.7rem]"></div>
                                                         <div class="row-start-1 row-end-2 self-center bg-gray-800 col-start-1 rounded justify-self-center h-[2.3rem] w-[0.7rem]"></div>
                                                  </div>
-                                                        <div class="h-[3rem] w-[3rem] border-[1px] bg-green-500/30 rounded-full"></div>
+                                                        <div class="h-[3rem] w-[3rem] border-[1px] bg-green-400/50 rounded-full"></div>
                                                  </div>
                                    </div>
                                   
