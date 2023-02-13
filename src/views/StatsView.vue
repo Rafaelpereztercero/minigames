@@ -31,13 +31,20 @@ export default {
               let x = 0;
               if (data2[x]) {
                 console.log(data2[x]);
-                return (this.stats = data2[x]);
+                
+                (this.stats = data2[x]);
+                return this.load()
               }
             });
         }
       });
   },
-  mounted() {
+
+  
+  
+
+  methods: {
+    load() {
     document.getElementById("nft").addEventListener(
       "click",
       function () {
@@ -187,8 +194,7 @@ export default {
       3000
     );
   },
-
-  methods: {},
+  },
 };
 </script>
 
@@ -211,13 +217,13 @@ export default {
         <div class="p-[2rem] col-start-1 col-end-4 grid">
           <div
             id="nft"
-            class="justify-self-center row-start-1 grid cursor-pointer grid-cols-3 w-[16rem] h-[7rem] rounded-[20px] border-[1px]"
+            class="justify-self-center bg-gray-300/40 row-start-1 grid cursor-pointer grid-cols-3 w-[16rem] h-[7rem] rounded-[20px] border-[1px]"
           >
             <div
-              class="h-[4rem] self-center ml-[30%] justify-self-center row-start-1 w-[5rem] border-[1px] flex items-center rounded overflow-hidden"
+              class="h-[4rem] self-center ml-[30%] justify-self-center row-start-1 w-[5rem] flex items-center rounded overflow-hidden"
             >
               <img
-                class="object-cover h-[200%] w-[200%] flex justify-center items-center overflow-hidden"
+                class=" bg-gray-600/40 object-cover h-[200%] w-[200%] flex justify-center items-center overflow-hidden"
                 src="/star.png"
               />
             </div>
@@ -231,13 +237,13 @@ export default {
 
           <div
             id="coin"
-            class="justify-self-center cursor-pointer row-start-1 grid grid-cols-3 w-[16rem] h-[7rem] rounded-[20px] border-[1px]"
+            class="justify-self-center bg-gray-300/40 cursor-pointer row-start-1 grid grid-cols-3 w-[16rem] h-[7rem] rounded-[20px] border-[1px]"
           >
             <div
-              class="h-[4rem] self-center ml-[30%] justify-self-center row-start-1 w-[5rem] border-[1px] flex items-center rounded overflow-hidden"
+              class="h-[4rem] self-center ml-[30%] justify-self-center row-start-1 w-[5rem]  flex items-center rounded overflow-hidden"
             >
               <img
-                class="object-cover h-[200%] w-[200%] flex justify-center items-center overflow-hidden"
+                class=" bg-gray-600/40 object-cover h-[200%] w-[200%] flex justify-center items-center overflow-hidden"
                 src="/star.png"
               />
             </div>
@@ -250,13 +256,13 @@ export default {
           </div>
           <div
             id="game"
-            class="justify-self-center cursor-pointer row-start-1 grid grid-cols-3 w-[16rem] h-[7rem] rounded-[20px] border-[1px]"
+            class="justify-self-center bg-gray-300/40 cursor-pointer row-start-1 grid grid-cols-3 w-[16rem] h-[7rem] rounded-[20px] border-[1px]"
           >
             <div
-              class="h-[4rem] self-center ml-[30%] justify-self-center row-start-1 w-[5rem] border-[1px] flex items-center rounded overflow-hidden"
+              class="h-[4rem] self-center ml-[30%] justify-self-center row-start-1 w-[5rem]  flex items-center rounded overflow-hidden"
             >
               <img
-                class="object-cover h-[100%] w-[100%] flex justify-center items-center overflow-hidden"
+                class="object-cover  bg-gray-600/40 h-[100%] w-[100%] flex justify-center items-center overflow-hidden"
                 src="/Gameboy.png"
               />
             </div>

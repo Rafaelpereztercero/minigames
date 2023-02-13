@@ -9,24 +9,46 @@ import asideY from '../components/asideY.vue'
 export default {
        data() {
               return {
-                     users: []
+                     users: [],
+                     nfts: []
               }
        },
-       created() {
+
+       methods: {
+
+
+       },
+       async mounted() {
+
+
+
+
               if (document.cookie == "") {
                      return this.users = []
               }
-
-              fetch("http://localhost:3000/players?cookie=" + document.cookie.substring(5,document.cookie.length))
+              await fetch("http://localhost:3000/players?cookie=" + document.cookie.substring(5, document.cookie.length))
                      .then(response => response.json())
                      .then(data => {
-                            let x= 0
-                           if(data[x]) {
-                            return this.users = data[x]
-                           }
+                            let x = 0
+                            if (data[x]) {
+                                   this.users = data[x]
+
+                            }
+
+
                      })
-       },
-       methods: {
+
+              for (let c = 0; c < this.users.nfts.length; c++) {
+                     await fetch("http://localhost:3000/nfts/" + this.users.nfts[c])
+                            .then(response2 => response2.json())
+                            .then(data2 => {
+
+                                   this.nfts.push(data2)
+
+                            })
+              }
+              console.log(this.nfts)
+
 
        }
 }
@@ -53,31 +75,69 @@ export default {
                             </div>
                      </div>
                      <div class="flex w-[75%] flex-col text-[2rem] text-[white] ">
-                           
-                            <div id="card-container" class="flex flex-wrap ">
 
-                                   <div class="shadow-xl hover:translate-y-[-30px] duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
-                                          <div class="pl-[1.5rem] pr-[1.5rem] pt-[1.5rem] flex justify-center content-center w-[100%] h-[60%]">
-                                                 <img src="/mario.png" class=" border-[3px] object-cover w-[100%] h-[100%] ">
-                                                 
+                            <div id="card-container" class="h-[20rem] flex flex-wrap ">
+
+                                   <div v-for="(nft, index) in nfts"
+                                          class="mr-[3rem] shadow-xl hover:translate-y-[-30px] duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
+                                          <div
+                                                 class="pl-[1.5rem] pr-[1.5rem] pt-[1.5rem] flex justify-center content-center w-[100%] h-[60%]">
+                                                 <img :src="nft.photo"
+                                                        class=" border-[3px] object-cover w-[100%] h-[100%] ">
+
                                           </div>
-                                          <div class="w-[100%] text-center text-[2rem]">Mario</div>
+                                          <div class="w-[100%] text-center text-[2rem]">{{ nft.name }}</div>
                                           <div class="flex justify-between pr-[1rem] pl-[1rem]">
                                                  <div class="grid grid-cols-1">
-                                                        <div class="row-start-1 row-end-2 bg-gray-800 self-center  col-start-1 rounded w-[2.3rem] h-[0.7rem]"></div>
-                                                        <div class="row-start-1 row-end-2 self-center bg-gray-800 col-start-1 rounded justify-self-center h-[2.3rem] w-[0.7rem]"></div>
+                                                        <div
+                                                               class="row-start-1 row-end-2 bg-gray-800 self-center  col-start-1 rounded w-[2.3rem] h-[0.7rem]">
+                                                        </div>
+                                                        <div
+                                                               class="row-start-1 row-end-2 self-center bg-gray-800 col-start-1 rounded justify-self-center h-[2.3rem] w-[0.7rem]">
+                                                        </div>
                                                  </div>
-                                                        <div class="h-[3rem] w-[3rem] border-[1px] bg-green-400/50 rounded-full"></div>
+                                                 <div v-if="nft.rarity == 'common'"
+                                                        class="h-[3rem] w-[3rem] border-[1px] bg-green-500/50 rounded-full">
                                                  </div>
+                                                 <div v-if="nft.rarity == 'rare'"
+                                                        class="h-[3rem] w-[3rem] border-[1px] bg-blue-500/50 rounded-full">
+                                                 </div>
+
+                                                 <div v-if="nft.rarity == 'epic'"
+                                                        class="h-[3rem] w-[3rem] border-[1px] bg-violet-500/50 rounded-full">
+                                                 </div>
+                                          </div>
                                    </div>
-                                  
+
 
 
 
                             </div>
                             <div class="self-end  w-[1rem]">
-                            <svg class="w-[100px] cursor-pointer border-[1px] rounded p-[1rem] col-start-3 mx:col-start-2 fill-current inline-block self-center" fill="#ffffff" version="1.1" id="XMLID_269_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g id="shop-cart"><g><circle cx="9" cy="21" r="2"></circle></g> <g><circle cx="19" cy="21" r="2"></circle></g> <g><path d="M21,18H7.2l-4-16H0V0h4.8l0.8,3H24l-3.2,11H8.3l0.5,2H21V18z M7.8,12h11.5l2-7H6L7.8,12z"></path></g></g></g></svg>
-                     </div>
+                                   <svg class="w-[100px] cursor-pointer border-[1px] rounded p-[1rem] col-start-3 mx:col-start-2 fill-current inline-block self-center"
+                                          fill="#ffffff" version="1.1" id="XMLID_269_"
+                                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          viewBox="0 0 24 24" xml:space="preserve">
+                                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                          </g>
+                                          <g id="SVGRepo_iconCarrier">
+                                                 <g id="shop-cart">
+                                                        <g>
+                                                               <circle cx="9" cy="21" r="2"></circle>
+                                                        </g>
+                                                        <g>
+                                                               <circle cx="19" cy="21" r="2"></circle>
+                                                        </g>
+                                                        <g>
+                                                               <path
+                                                                      d="M21,18H7.2l-4-16H0V0h4.8l0.8,3H24l-3.2,11H8.3l0.5,2H21V18z M7.8,12h11.5l2-7H6L7.8,12z">
+                                                               </path>
+                                                        </g>
+                                                 </g>
+                                          </g>
+                                   </svg>
+                            </div>
                      </div>
 
               </div>

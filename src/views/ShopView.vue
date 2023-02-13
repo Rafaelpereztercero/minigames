@@ -29,6 +29,54 @@ export default {
                     
               },
        methods: {
+        async  patchUser(user) {
+    const response = await fetch( `http://localhost:3000/players/?id=${user.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    return;
+  },
+        async buyRandomRare() {
+          if(this.users.coins < 5) {
+            alert('Not enough balance!')
+          } else {
+            let continueX = true
+            let count = 0
+            fetch("http://localhost:3000/nfts?rarity=rare")
+                     .then(response => response.json())
+                     .then(data => {
+                      while (continueX == true) {
+                        continueX = false
+                      if (count > data.length) {
+                        return
+                      }
+                      let j = Math.floor(Math.random() * data.length)
+                      
+                      for (let g = 0; g < this.users.nfts.length;g++) {
+                        if (this.users.nfts[g] == data[j].id) {
+                          
+                          continueX = true
+                         
+                        }
+                       
+                      }
+                      if (continueX == false) {
+                          this.users.nfts.push(data[j].id)
+                          this.users.coins = this.users.coins - 5
+                          this.patchUser(this.users)
+                        }
+                        count ++
+                           
+                           
+                           
+                          }
+                     })
+                    
+          }
+        }
 
        }
 }
@@ -108,7 +156,7 @@ export default {
                 >
                   <h1 class="text-3xl font-bold">Mario</h1>
                   <p class="text-lg">Rare</p>
-                  <button
+                  <button v-on:click="buyRandomRare()"
                     class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
                   >
                     Buy
