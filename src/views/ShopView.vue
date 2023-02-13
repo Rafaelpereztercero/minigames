@@ -30,7 +30,8 @@ export default {
               },
        methods: {
         async  patchUser(user) {
-    const response = await fetch( `http://localhost:3000/players/?id=${user.id}`, {
+          console.log(user)
+    const response = await fetch( `http://localhost:3000/players/${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -39,13 +40,33 @@ export default {
     });
     return;
   },
-        async buyRandomRare() {
-          if(this.users.coins < 5) {
+        async buyRandom(param) {
+          let coin
+          let rarity
+          if (param == 0) {
+            coin = 1
+            rarity = "common"
+          }
+          if (param == 1) {
+            coin = 5
+            rarity = "rare"
+          }
+          if (param == 2) {
+            coin = 20
+            rarity = "epic"
+          }
+          if (param == 3) {
+            coin = "7"
+            rarity = ['rare','common','epic','common','common','rare']
+            rarity = rarity[Math.floor(Math.random() * rarity.length)]
+          }
+
+          if(this.users.coins < coin) {
             alert('Not enough balance!')
           } else {
             let continueX = true
             let count = 0
-            fetch("http://localhost:3000/nfts?rarity=rare")
+            fetch("http://localhost:3000/nfts?rarity="+rarity)
                      .then(response => response.json())
                      .then(data => {
                       while (continueX == true) {
@@ -65,7 +86,7 @@ export default {
                       }
                       if (continueX == false) {
                           this.users.nfts.push(data[j].id)
-                          this.users.coins = this.users.coins - 5
+                          this.users.coins = this.users.coins - coin
                           this.patchUser(this.users)
                         }
                         count ++
@@ -126,7 +147,7 @@ export default {
                 >
                   <h1 class="text-3xl font-bold">Mario</h1>
                   <p class="text-lg">Epic</p>
-                  <button
+                  <button v-on:click="buyRandom(2)"
                     class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
                   >
                     Buy
@@ -156,7 +177,7 @@ export default {
                 >
                   <h1 class="text-3xl font-bold">Mario</h1>
                   <p class="text-lg">Rare</p>
-                  <button v-on:click="buyRandomRare()"
+                  <button v-on:click="buyRandom(1)"
                     class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
                   >
                     Buy
@@ -186,7 +207,7 @@ export default {
                 >
                   <h1 class="text-3xl font-bold">Mario</h1>
                   <p class="text-lg">Common</p>
-                  <button
+                  <button v-on:click="buyRandom(0)"
                     class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
                   >
                     Buy

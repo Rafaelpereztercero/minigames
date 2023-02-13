@@ -70,7 +70,7 @@ export default {
 
                             <div
                                    class="text-[1.2rem] self-end flex bg-gray-900 rounded p-[1rem] h-[3rem] justify-between">
-                                   <div class="font-bold self-center text-center text-[white]">1</div>
+                                   <div class="font-bold self-center text-center text-[white]">{{ this.users.coins }}</div>
                                    <img class="w-[4rem] self-center" src="/star.png" />
                             </div>
                      </div>

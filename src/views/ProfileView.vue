@@ -23,13 +23,49 @@ export default {
                      .then(data => {
                             let x= 0
                            if(data[x]) {
+                            this.setImg(data[x]) 
                             return this.users = data[x]
+                            
                            }
 
                      })
                     
               },
-              methods: {
+              methods: {  
+                     async  patchUser(user) {
+          console.log(user)
+   }
+    ,
+
+async setImg(userx) {
+console.log(userx)
+    
+const inputFile = document.getElementById("input-file");
+
+inputFile.onchange = function (evt) {
+    var tgt = evt.target || window.event.srcElement, files = tgt.files;
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onload = async function () {
+            document.getElementById('uImg').src = fr.result
+            document.getElementById('pImg').src = fr.result
+             userx.photo=fr.result
+             const response = await fetch( `http://localhost:3000/players/${userx.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(userx),
+    });
+    return;
+
+           console.log(fr.result)
+
+        };
+        fr.readAsDataURL(files[0]);
+    }
+};
+                     }
          
          },
        }
@@ -55,11 +91,16 @@ export default {
                       <svg class="w-[20px]  col-start-3 mx:col-start-2 fill-current inline-block self-center" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_901_1558)"> <path d="M29 7H30C30.553 7 31 7.447 31 8V30C31 30.553 30.553 31 30 31H2C1.447 31 1 30.553 1 30V8C1 7.447 1.447 7 2 7H19M6 28V19H10V28M14 28V13H18V28M22 28V1H26V28" stroke="#ffffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_901_1558"> <rect width="32" height="32" fill="white"></rect> </clipPath> </defs> </g></svg>
                     </div>
                     </div>
-                      
+                   
+                      <div class="h-[8rem] w-[8rem] justify-self-start overflow-hidden absolute rounded-full grid grid-cols-1 border-[5px]">
+                            
+                       <img id="uImg" class="object-cover justify-self-center col-start-1 row-start-1  h-[7.5rem] absolute overflow-hidden" :src="users.photo"></div>
+                       <div class="bg-blue-400 rounded-full col-start-1 row-start-2 z-50 absolute justify-self-center grid grid-cols-1 mt-[5rem] ml-[4rem] w-[3rem] p-[0.3rem] border-[1px] border-[black] cursor-pointer  h-[3rem] overflow-hidden ">
+                                   <img class="col-start-1 row-start-1 w-[3rem] cursor-pointer justify-self-center" src="https://raw.githubusercontent.com/Rafaelpereztercero/BitLevel/b1b38d18411d6d15e2c32925eaf12634266e04c0/Project-BitLevel/Frontend/Assets/Icons/edit-3.svg">
+                            <input type="file" id="input-file" class="cursor-pointer col-start-1 row-start-1 opacity-0">
+                            </div>
                      
-                       <img class="object-cover h-[8rem] w-[8rem] border-[5px] flex justify-center items-center rounded-full absolute mt-[1rem] overflow-hidden" :src="users.photo"></div>
-                    
-                    
+              </div>
                   
                   <div class=" bg-gray-200/10 w-[50%] h-[35%] rounded flex mt-[2rem] border-[1px] flex-col items-center justify-center">
                     <p class="text-[2rem] font-bold">{{this.users.name}}</p>
