@@ -27,10 +27,10 @@ export default {
       
         let x = 0
           if (data[x]) {
-            document.getElementById("user").innerHTML = ` <img class="self-center w-[10rem]" src="/Gameboy.png" />
+            document.getElementById("user").innerHTML = ` <img  alt="logo" class="self-center w-[10rem] h-auto" src="/Gameboy.png" />
           
                                         <div  id="pUser" class="flex self-center mt-[-1rem] w-[4rem] h-[4rem] overflow-hidden">
-                                         <img id="pImg" class=" rounded  cursor-pointer   self-center object-cover h-[4rem] w-[4rem]" src=${data[x].photo}>
+                                         <img id="pImg" alt="pImage" class=" rounded  cursor-pointer   self-center object-cover h-[4rem] w-[4rem]" src=${data[x].photo}>
                                          <button id="logout" class=" hidden rounded  self-center h-[4rem] border-[1px] w-[4rem]">Logout</button>
                                          </div>`
             document.getElementById("logout").addEventListener("click", function () {
@@ -85,7 +85,7 @@ export default {
           class="flex rounded-br-lg w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col  ">
           <div class="flex flex-col text-[1.2rem] text-blue-400 self-center font-bold">
             <div id="user" class="flex flex-col">
-              <img class="self-center w-[10rem]" src="/Gameboy.png" />
+              <img class="self-center w-[10rem] h-auto" alt="logo" src="/Gameboy.png" />
             </div>
 
             <div id="noneUser"

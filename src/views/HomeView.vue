@@ -36,13 +36,13 @@ import footerX from '../components/footer.vue'
                                    data-bs-ride="carousel">
                                    <div class="object-cover carousel-inner realtive h-full w-full overflow-hidden ">
                                           <div id="first" class="carousel-item active relative float-left w-full">
-                                                 <img src="/mario.png" class="object-cover"  />
+                                                 <img alt="1" src="/mario.png" class="h-full w-full object-cover"  />
                                           </div>
                                           <div id="second" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="object-cover"  />
+                                                 <img alt="2" src="/mario.png" class=" w-full h-full object-cover"  />
                                           </div>
                                           <div id="third" class="carousel-item relative float-left w-full">
-                                                 <img src="/mario.png" class="object-cover" />
+                                                 <img  alt="3" src="/mario.png" class="h-full w-full object-cover" />
                                           </div>
                                    </div>
                                  

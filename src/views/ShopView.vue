@@ -63,20 +63,72 @@ export default {
     },
     async setRandom(param, nfts) {
       let x = 0
-     
+      let count = 0
+      let who = 0
+      document.getElementById("card").classList.add("translate-y-[-30px]")
+
       while (x < 30) {
         let random = Math.floor(Math.random() * nfts.length)
 
         x++
+        count += 1
         let color = this.getColor(nfts[random].rarity)
+        if (document.getElementById("card").classList.contains("translate-y-[30px]") && count == 1) {
+          if (who == 0) {   document.getElementById("card").classList.remove("translate-y-[30px]")
+        document.getElementById("card").classList.add("translate-y-[-30px]")
+      who = 1
+      }
+        else {
+
+          if (document.getElementById("card").classList.contains("translate-x-[30px]")) {
+            document.getElementById("card").classList.remove("translate-x-[30px]")
+
+          }
+          document.getElementById("card").classList.add("translate-x-[-30px]")
+          who = 0
+        }
+        
+          count = 0
+        }
+        if (document.getElementById("card").classList.contains("translate-y-[-30px]") && count == 1) {
+          if (who == 0) { document.getElementById("card").classList.remove("translate-y-[-30px]")
+         
+         document.getElementById("card").classList.add("translate-y-[30px]")
+        who = 1
+      }else {
+          if (document.getElementById("card").classList.contains("translate-x-[-30px]")) {
+            document.getElementById("card").classList.remove("translate-x-[-30px]")
+
+          }
+          document.getElementById("card").classList.add("translate-x-[30px]")
+         who  = 0 
+        }
+          count = 0
+        }
+
         document.getElementById("bColor").classList.add(color)
         document.getElementById("bName").innerHTML = nfts[random].name
         document.getElementById("bImg").src = nfts[random].photo
         await new Promise(r => setTimeout(r, 100));
       }
       
- 
-      
+      if (document.getElementById("card").classList.contains("translate-x-[-30px]")) {
+            document.getElementById("card").classList.remove("translate-x-[-30px]")
+
+      }
+      if (document.getElementById("card").classList.contains("translate-x-[30px]")) {
+            document.getElementById("card").classList.remove("translate-x-[30px]")
+
+      }
+      if (document.getElementById("card").classList.contains("translate-y-[-30px]")) {
+        document.getElementById("card").classList.remove("translate-y-[-30px]")
+
+      }
+      if (document.getElementById("card").classList.contains("translate-y-[30px]")) {
+        document.getElementById("card").classList.remove("translate-y-[30px]")
+
+      }
+      document.getElementById("card").classList.add("translate-y-[-30px]")
       document.getElementById("cont").addEventListener("click", function () {
         document.getElementById("cont").classList.add("hidden")
       })
@@ -168,7 +220,7 @@ export default {
     <div
       class="flex justify-center items-center  justify-self-center z-50 col-start-1 col-end-5 w-[50%] h-[25rem]  mt-[-50px] bg-gray-900">
       <div id="card" 
-        class="card-select mr-[3rem] shadow-xl hover:translate-y-[-30px] duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
+        class="card-select mr-[3rem] shadow-xl duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
 
         <div class="pl-[1.5rem] pr-[1.5rem] pt-[1.5rem] flex justify-center content-center w-[100%] h-[60%]">
           <img id="bImg" src="" class="border-[3px] object-cover w-[100%] h-[100%]" />
@@ -202,7 +254,7 @@ export default {
 
     </div>
     <div
-      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh]">
+      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[max-content] sm:h-[70vh]">
       <div class="flex flex-col w-[75%] justify-start p-[1rem] self-end">
         <div class="text-[1.2rem] self-end flex bg-gray-900 rounded p-[1rem] h-[3rem] justify-between">
           <div class="font-bold self-center text-center text-[white]">{{ this.users.coins }}</div>
@@ -212,7 +264,8 @@ export default {
 
 
       <!--  -->
-      <div class="grid  w-[75%] grid-cols-4 text-[2rem]">
+      <div class="sm:grid  w-[75%]   flex flex-col justify-center lg:grid-cols-4 sm:grid-cols-2 text-[2rem] items-center">
+        <p class="sm:hidden mt-[2rem]"> Epic</p>
         <div class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded">
           <div
             class="relative h-full w-full border-[violet] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -232,6 +285,7 @@ export default {
             </div>
           </div>
         </div>
+        <p class="sm:hidden mt-[2rem]"> Rare</p>
         <div class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded">
           <div
             class="relative h-full w-full border-[blue] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -251,7 +305,8 @@ export default {
             </div>
           </div>
         </div>
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px] rounded">
+        <p class="sm:hidden mt-[2rem]">Common</p>
+        <div class="group sm:mt-[3rem] lg:mt-[0] h-[11rem] w-[8rem] [perspective:1000px] rounded">
           <div
             class="relative h-full w-full border-[green] border-[2px] rounded-xl shadow-x1 transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div class="absolute inset-0">
@@ -270,7 +325,8 @@ export default {
             </div>
           </div>
         </div>
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px] rounded">
+        <p class="sm:hidden mt-[2rem]"> Random</p>
+        <div class="group  sm:mt-[3rem] lg:mt-[0] h-[11rem] w-[8rem] [perspective:1000px] rounded">
           <div
             class="relative h-full w-full  bg-black/90 border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div class="flex items-center justify-center inset-0">
@@ -291,78 +347,7 @@ export default {
 
         <!---->
 
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
-          <div
-            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <div class="flex items-center justify-center inset-0">
-              <p class="text-[5rem]  text-center">3</p>
-            </div>
-            <div
-              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-              <div class="flex min-h-full flex-col items-center justify-center">
-                <h1 class="text-3xl font-bold">3</h1>
-                <p class="text-lg">Random</p>
-                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
-                  Buy
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
-          <div
-            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <div class="flex items-center justify-center inset-0">
-              <p class="text-[5rem]  text-center">6</p>
-            </div>
-            <div
-              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-              <div class="flex min-h-full flex-col items-center justify-center">
-                <h1 class="text-3xl font-bold">6</h1>
-                <p class="text-lg">Random</p>
-                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
-                  Buy
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
-          <div
-            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <div class="flex items-center justify-center inset-0">
-              <p class="text-[5rem]  text-center">8</p>
-            </div>
-            <div
-              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-              <div class="flex min-h-full flex-col items-center justify-center">
-                <h1 class="text-3xl font-bold">8</h1>
-                <p class="text-lg">Random</p>
-                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
-                  Buy
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
-          <div
-            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <div class="flex items-center justify-center inset-0">
-              <p class="text-[5rem]  text-center">10</p>
-            </div>
-            <div
-              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-              <div class="flex min-h-full flex-col items-center justify-center">
-                <h1 class="text-3xl font-bold">10</h1>
-                <p class="text-lg">Random</p>
-                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
-                  Buy
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </div>
     <footerX class="row-start-4 row-end-5"></footerX>
