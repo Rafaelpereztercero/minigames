@@ -5,355 +5,369 @@ import footerX from '../components/footer.vue'
 </script> 
 <script>
 export default {
-       data() {
-              return {
-                     users: []
-              }
-       },
-       
-       created() {
-                     if (document.cookie == "") {
-                            return this.users = []
-                     }
-                    
-                    
-                     fetch("http://localhost:3000/players?cookie=" + document.cookie.substring(5,document.cookie.length))
-                     .then(response => response.json())
-                     .then(data => {
-                            let x= 0
-                           if(data[x]) {
-                            return this.users = data[x]
-                           }
-
-                     })
-                    
-              },
-       methods: {
-        async  patchUser(user) {
-          console.log(user)
-    const response = await fetch( `http://localhost:3000/players/${user.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
-    return;
+  data() {
+    return {
+      users: [],
+      nfts: []
+    }
   },
-        async buyRandom(param) {
-          let coin
-          let rarity
-          if (param == 0) {
-            coin = 1
-            rarity = "common"
-          }
-          if (param == 1) {
-            coin = 5
-            rarity = "rare"
-          }
-          if (param == 2) {
-            coin = 20
-            rarity = "epic"
-          }
-          if (param == 3) {
-            coin = "7"
-            rarity = ['rare','common','epic','common','common','rare']
-            rarity = rarity[Math.floor(Math.random() * rarity.length)]
-          }
 
-          if(this.users.coins < coin) {
-            alert('Not enough balance!')
-          } else {
-            let continueX = true
-            let count = 0
-            fetch("http://localhost:3000/nfts?rarity="+rarity)
-                     .then(response => response.json())
-                     .then(data => {
-                      while (continueX == true) {
-                        continueX = false
-                      if (count > data.length) {
-                        return
-                      }
-                      let j = Math.floor(Math.random() * data.length)
-                      
-                      for (let g = 0; g < this.users.nfts.length;g++) {
-                        if (this.users.nfts[g] == data[j].id) {
-                          
-                          continueX = true
-                         
-                        }
-                       
-                      }
-                      if (continueX == false) {
-                          this.users.nfts.push(data[j].id)
-                          this.users.coins = this.users.coins - coin
-                          this.patchUser(this.users)
-                        }
-                        count ++
-                           
-                           
-                           
-                          }
-                     })
-                    
-          }
+  async created() {
+    if (document.cookie == "") {
+      return (this.users = []);
+    }
+    await fetch(
+      "http://localhost:3000/players?cookie=" +
+      document.cookie.substring(5, document.cookie.length)
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        let x = 0;
+        if (data[x]) {
+          this.users = data[x];
         }
+      });
 
-       }
+    for (let c = 0; c < this.users.nfts.length; c++) {
+      await fetch("http://localhost:3000/nfts/" + this.users.nfts[c])
+        .then((response2) => response2.json())
+        .then((data2) => {
+          this.nfts.push(data2);
+        });
+    }
+  },
+  methods: {
+    getColor(rarity) {
+      if (document.getElementById("bColor").classList.contains('bg-blue-500/50')) {
+        document.getElementById("bColor").classList.remove('bg-blue-500/50')
+
+      }
+      if (document.getElementById("bColor").classList.contains('bg-green-500/50')) {
+        document.getElementById("bColor").classList.remove('bg-green-500/50')
+
+      }
+      if (
+        document.getElementById("bColor").classList.contains('bg-violet-500/50')) {
+        document.getElementById("bColor").classList.remove('bg-violet-500/50')
+      }
+      if (rarity == 'common') {
+
+        return 'bg-green-500/50'
+      }
+      if (rarity == 'rare') {
+        return 'bg-blue-500/50'
+      }
+      else {
+        return 'bg-violet-500/50'
+      }
+    },
+    async setRandom(param, nfts) {
+      let x = 0
+     
+      while (x < 30) {
+        let random = Math.floor(Math.random() * nfts.length)
+
+        x++
+        let color = this.getColor(nfts[random].rarity)
+        document.getElementById("bColor").classList.add(color)
+        document.getElementById("bName").innerHTML = nfts[random].name
+        document.getElementById("bImg").src = nfts[random].photo
+        await new Promise(r => setTimeout(r, 100));
+      }
+      
+ 
+      
+      document.getElementById("cont").addEventListener("click", function () {
+        document.getElementById("cont").classList.add("hidden")
+      })
+    },
+
+    async patchUser(user) {
+      console.log(user)
+      const response = await fetch(`http://localhost:3000/players/${user.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      return;
+    },
+   
+    async buyRandom(param, nftsd) {
+      let coin
+      let rarity
+      if (param == 0) {
+        coin = 1
+        rarity = "common"
+      }
+      if (param == 1) {
+        coin = 5
+        rarity = "rare"
+      }
+      if (param == 2) {
+        coin = 20
+        rarity = "epic"
+      }
+      if (param == 3) {
+        coin = "7"
+        rarity = ['rare', 'common', 'epic', 'common', 'common', 'rare']
+        rarity = rarity[Math.floor(Math.random() * rarity.length)]
+      }
+
+      if (this.users.coins < coin) {
+        alert('Not enough balance!')
+      } else {
+        let continueX = true
+        let count = 0
+        fetch("http://localhost:3000/nfts?rarity=" + rarity)
+          .then(response => response.json())
+          .then(async data => {
+            while (continueX == true) {
+              continueX = false
+              if (count > data.length) {
+                return
+              }
+              let j = Math.floor(Math.random() * data.length)
+
+              for (let g = 0; g < this.users.nfts.length; g++) {
+                if (this.users.nfts[g] == data[j].id) {
+
+                  continueX = true
+
+                }
+
+              }
+              if (continueX == false) {
+                this.users.nfts.push(data[j].id)
+                document.getElementById("cont").classList.remove("hidden")
+
+                await this.setRandom(0, data)
+                let color = this.getColor(data[j].rarity)
+                document.getElementById("bColor").classList.add(color)
+        document.getElementById("bName").innerHTML = data[j].name
+        document.getElementById("bImg").src = data[j].photo
+                this.users.coins = this.users.coins - coin
+                this.patchUser(this.users)
+              }
+              count++
+
+
+
+            }
+          })
+
+      }
+    }
+
+  }
 }
 </script>
 <template>
- <div class="grid grid-cols-8 grid-rows-[200px 300px]">
-              <asideX class="row-start-1 row-end-3">
+  <div id="cont" class="hidden z-50 h-full bg-gray-600/30 w-full absolute flex justify-center items-center">
+    <div
+      class="flex justify-center items-center  justify-self-center z-50 col-start-1 col-end-5 w-[50%] h-[25rem]  mt-[-50px] bg-gray-900">
+      <div id="card" 
+        class="card-select mr-[3rem] shadow-xl hover:translate-y-[-30px] duration-[1000ms] cursor-pointer bg-gray-300/20 border-[1px] h-[17rem] w-[12rem] rounded-br-lg">
 
-              </asideX>
+        <div class="pl-[1.5rem] pr-[1.5rem] pt-[1.5rem] flex justify-center content-center w-[100%] h-[60%]">
+          <img id="bImg" src="" class="border-[3px] object-cover w-[100%] h-[100%]" />
+        </div>
+        <div id="bName" class="w-[100%] text-center text-[2rem]"></div>
+        <div class="flex justify-between pr-[1rem] pl-[1rem]">
+          <div class="grid grid-cols-1">
+            <div class="row-start-1 row-end-2 bg-gray-800 self-center col-start-1 rounded w-[2.3rem] h-[0.7rem]">
+            </div>
+            <div
+              class="row-start-1 row-end-2 self-center bg-gray-800 col-start-1 rounded justify-self-center h-[2.3rem] w-[0.7rem]">
+            </div>
+          </div>
+          <div id="bColor" class="h-[3rem] w-[3rem] border-[1px] bg-green-500/50 rounded-full">
+          </div>
 
-              <div
-                     class="mt-[10%] grid grid-cols-8 sm:flex col-start-2 sm:col-end-2 col-end-[-2] w-full row-start-1 row-end-1 justify-center items-center rounded bg-gray-900 sm:w-[85vw] h-[15vh]">
-                     <asideY class="col-start-2 cursor-pointer"></asideY>
-                     <p class="col-start-5 self-center text-[2.5rem] text-[white]">Shop</p>
 
-              </div>
-              <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh]">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-8 grid-rows-[200px 300px]">
+    <asideX class="row-start-1 row-end-3">
+
+    </asideX>
+
+    <div
+      class="mt-[10%] grid grid-cols-8 sm:flex col-start-2 sm:col-end-2 col-end-[-2] w-full row-start-1 row-end-1 justify-center items-center rounded bg-gray-900 sm:w-[85vw] h-[15vh]">
+      <asideY class="col-start-2 cursor-pointer"></asideY>
+      <p class="col-start-5 self-center text-[2.5rem] text-[white]">Shop</p>
+
+    </div>
+    <div
+      class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh]">
       <div class="flex flex-col w-[75%] justify-start p-[1rem] self-end">
-        <div
-          class="text-[1.2rem] self-end flex bg-gray-900 rounded p-[1rem] h-[3rem] justify-between"
-        >
+        <div class="text-[1.2rem] self-end flex bg-gray-900 rounded p-[1rem] h-[3rem] justify-between">
           <div class="font-bold self-center text-center text-[white]">{{ this.users.coins }}</div>
           <img class="w-[4rem] self-center" src="/star.png" />
         </div>
       </div>
-        <div class="grid  w-[75%] grid-cols-4 text-[2rem]">
-          <!--  -->
+
+
+      <!--  -->
+      <div class="grid  w-[75%] grid-cols-4 text-[2rem]">
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded"
-          >
+            class="relative h-full w-full border-[violet] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="absolute inset-0">
+              <img class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src="/mario.png" alt="" />
+            </div>
             <div
-              class="relative h-full w-full border-[violet] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="absolute inset-0">
-                <img
-                  class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-                  src="/mario.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">Mario</h1>
-                  <p class="text-lg">Epic</p>
-                  <button v-on:click="buyRandom(2)"
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">Mario</h1>
+                <p class="text-lg">Epic</p>
+                <button v-on:click="buyRandom(2, this.nfts)"
+                  class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
+        </div>
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded"
-          >
+            class="relative h-full w-full border-[blue] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="absolute inset-0">
+              <img class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src="/mario.png" alt="" />
+            </div>
             <div
-              class="relative h-full w-full border-[blue] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="absolute inset-0">
-                <img
-                  class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-                  src="/mario.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">Mario</h1>
-                  <p class="text-lg">Rare</p>
-                  <button v-on:click="buyRandom(1)"
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">Mario</h1>
+                <p class="text-lg">Rare</p>
+                <button v-on:click="buyRandom(1, this.nfts)"
+                  class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
+        </div>
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px] rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px] rounded"
-          >
+            class="relative h-full w-full border-[green] border-[2px] rounded-xl shadow-x1 transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="absolute inset-0">
+              <img class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src="/mario.png" alt="" />
+            </div>
             <div
-              class="relative h-full w-full border-[green] border-[2px] rounded-xl shadow-x1 transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="absolute inset-0">
-                <img
-                  class="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
-                  src="/mario.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">Mario</h1>
-                  <p class="text-lg">Common</p>
-                  <button v-on:click="buyRandom(0)"
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">Mario</h1>
+                <p class="text-lg">Common</p>
+                <button v-on:click="buyRandom(0, this.nfts)"
+                  class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
+        </div>
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px] rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px] rounded"
-          >
+            class="relative h-full w-full  bg-black/90 border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="flex items-center justify-center inset-0">
+              <p class="text-[5rem] text-white/50 text-center">?</p>
+            </div>
             <div
-              class="relative h-full w-full  bg-black/90 border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="flex items-center justify-center inset-0">
-               <p class="text-[5rem] text-white/50 text-center">?</p>
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">?</h1>
-                  <p class="text-lg">Random</p>
-                  <button
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">?</h1>
+                <p class="text-lg">Random</p>
+                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
-          
-          <!---->
-          
+        </div>
+
+        <!---->
+
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded"
-          >
+            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="flex items-center justify-center inset-0">
+              <p class="text-[5rem]  text-center">3</p>
+            </div>
             <div
-              class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="flex items-center justify-center inset-0">
-               <p class="text-[5rem]  text-center">3</p>
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">3</h1>
-                  <p class="text-lg">Random</p>
-                  <button
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">3</h1>
+                <p class="text-lg">Random</p>
+                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
+        </div>
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded"
-          >
+            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="flex items-center justify-center inset-0">
+              <p class="text-[5rem]  text-center">6</p>
+            </div>
             <div
-              class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="flex items-center justify-center inset-0">
-               <p class="text-[5rem]  text-center">6</p>
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">6</h1>
-                  <p class="text-lg">Random</p>
-                  <button
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">6</h1>
+                <p class="text-lg">Random</p>
+                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
+        </div>
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded"
-          >
+            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="flex items-center justify-center inset-0">
+              <p class="text-[5rem]  text-center">8</p>
+            </div>
             <div
-              class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="flex items-center justify-center inset-0">
-               <p class="text-[5rem]  text-center">8</p>
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">8</h1>
-                  <p class="text-lg">Random</p>
-                  <button
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">8</h1>
+                <p class="text-lg">Random</p>
+                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
+        </div>
+        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded">
           <div
-            class="group h-[11rem] w-[8rem] [perspective:1000px]  mt-[3rem] rounded"
-          >
+            class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div class="flex items-center justify-center inset-0">
+              <p class="text-[5rem]  text-center">10</p>
+            </div>
             <div
-              class="relative h-full w-full border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
-            >
-              <div class="flex items-center justify-center inset-0">
-               <p class="text-[5rem]  text-center">10</p>
-              </div>
-              <div
-                class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]"
-              >
-                <div
-                  class="flex min-h-full flex-col items-center justify-center"
-                >
-                  <h1 class="text-3xl font-bold">10</h1>
-                  <p class="text-lg">Random</p>
-                  <button
-                    class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900"
-                  >
-                    Buy
-                  </button>
-                </div>
+              class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div class="flex min-h-full flex-col items-center justify-center">
+                <h1 class="text-3xl font-bold">10</h1>
+                <p class="text-lg">Random</p>
+                <button class="mt-1 hover:bg-sky-700 px-6 rounded-md bg-neutral-800 py-2 text-sm hover:bg-neutral-900">
+                  Buy
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <footerX class="row-start-4 row-end-5"></footerX>
-
     </div>
-    
-  
+    <footerX class="row-start-4 row-end-5"></footerX>
+
+  </div>
+
+
 </template>

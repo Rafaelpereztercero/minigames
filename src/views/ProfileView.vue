@@ -95,7 +95,7 @@ inputFile.onchange = function (evt) {
                       <div class="h-[8rem] w-[8rem] justify-self-start overflow-hidden absolute rounded-full grid grid-cols-1 border-[5px]">
                             
                        <img id="uImg" class="object-cover justify-self-center col-start-1 row-start-1  h-[7.5rem] absolute overflow-hidden" :src="users.photo"></div>
-                       <div class="bg-blue-400 rounded-full col-start-1 row-start-2 z-50 absolute justify-self-center grid grid-cols-1 mt-[5rem] ml-[4rem] w-[3rem] p-[0.3rem] border-[1px] border-[black] cursor-pointer  h-[3rem] overflow-hidden ">
+                       <div class="bg-blue-400 rounded-full col-start-1 row-start-2 z-50 absolute justify-self-center grid grid-cols-1 mt-[5rem] ml-[4rem] w-[3rem] p-[0.3rem] border-[4px] border-[black] cursor-pointer  h-[3rem] overflow-hidden ">
                                    <img class="col-start-1 row-start-1 w-[3rem] cursor-pointer justify-self-center" src="https://raw.githubusercontent.com/Rafaelpereztercero/BitLevel/b1b38d18411d6d15e2c32925eaf12634266e04c0/Project-BitLevel/Frontend/Assets/Icons/edit-3.svg">
                             <input type="file" id="input-file" class="cursor-pointer col-start-1 row-start-1 opacity-0">
                             </div>
