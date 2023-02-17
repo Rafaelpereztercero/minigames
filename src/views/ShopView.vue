@@ -13,9 +13,12 @@ export default {
   },
 
   async created() {
+    
     if (document.cookie == "") {
       return (this.users = []);
     }
+    
+  
     await fetch(
       "http://localhost:3000/players?cookie=" +
       document.cookie.substring(5, document.cookie.length)
@@ -216,6 +219,29 @@ export default {
 }
 </script>
 <template>
+  <div id="asideact" class="rounded sm:hidden content-center duration-[1000ms] fixed translate-x-[1000px] w-full z-50 h-full  p-[3rem] bg-white/20">
+              <div class="flex rounded justify-center h-[100%] w-[100%] items-center">
+                     <div class="bg-white rounded h-[100%] w-[100%] flex flex-col p-[0rem]">
+                            <div class="flex bg-gray-900 w-[100%] p-[1rem] justify-between">
+
+                            <div class="text-[1.7rem] text-white">MiniGames</div>
+                            <button id="close" class="self-end w-[3rem] h-[3rem] rounded bg-red-600 text-white">X</button>
+                     </div>
+                     <div class="bg-violet-400 h-full p-[1rem]">
+                            <input type="text" class="rounded w-[100%] cursor-pointer">
+                            <div class="flex flex-col mt-[10%] justify-between items-center h-[40%] mt-[4rem] ">
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+
+
+
+                            </div>
+                     </div>
+                     </div>
+              </div>
+       </div>
   <div id="cont" class="hidden z-50 h-full bg-gray-600/30 w-full absolute flex justify-center items-center">
     <div
       class="flex justify-center items-center  justify-self-center z-50 col-start-1 col-end-5 w-[50%] h-[25rem]  mt-[-50px] bg-gray-900">
@@ -249,7 +275,7 @@ export default {
 
     <div
       class="mt-[10%] grid grid-cols-8 sm:flex col-start-2 sm:col-end-2 col-end-[-2] w-full row-start-1 row-end-1 justify-center items-center rounded bg-gray-900 sm:w-[85vw] h-[15vh]">
-      <asideY class="col-start-2 cursor-pointer"></asideY>
+      <asideY id="asidey" class="col-start-2 cursor-pointer"></asideY>
       <p class="col-start-5 self-center text-[2.5rem] text-[white]">Shop</p>
 
     </div>

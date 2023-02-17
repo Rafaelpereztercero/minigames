@@ -49,22 +49,26 @@ export default {
       "click",
       function () {
         let bg = "bg-blue-500";
+        let bg2 = "bg-white/60"
 
+        if (document.getElementById("nft").classList.contains(bg2)){
+          document.getElementById("nft").classList.remove(bg2);
+        }
         document.getElementById("nft").classList.add(bg);
 
-        if (document.getElementById("game").classList.contains(bg)) {
-          document.getElementById("game").classList.remove(bg);
-        }
         if (document.getElementById("coin").classList.contains(bg)) {
           document.getElementById("coin").classList.remove(bg);
+        }
+        if (document.getElementById("game").classList.contains(bg)) {
+          document.getElementById("game").classList.remove(bg);
         }
 
         document.getElementById("content").innerHTML = `
 <div
-                            class=" justify-self-center   w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
+                            class=" justify-self-center bg-white/60  w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
                             <div class="h-[8.5rem] w-[8.5rem] rounded-full border-[1px]">
                                    <img class="object-cover h-full w-full border-[2px] flex justify-center items-center rounded-full  overflow-hidden"
-                                          src="">
+                                          src="${user.photo}">
 
                             </div>
                             <p class="text-center col-start-2 col-end-4 text-[3rem] font-bold">TOP 20%</p>
@@ -99,7 +103,11 @@ export default {
       "click",
       function () {
         let bg = "bg-blue-500";
+        let bg2 = "bg-white/60"
 
+        if (document.getElementById("coin").classList.contains(bg2)){
+          document.getElementById("coin").classList.remove(bg2);
+        }
         document.getElementById("coin").classList.add(bg);
 
         if (document.getElementById("nft").classList.contains(bg)) {
@@ -111,16 +119,16 @@ export default {
 
         document.getElementById("content").innerHTML = `
 <div
-                            class=" justify-self-center   w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
+                            class=" justify-self-center bg-white/60  w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
                             <div class="h-[8.5rem] w-[8.5rem] rounded-full border-[1px]">
                                    <img class="object-cover h-full w-full border-[2px] flex justify-center items-center rounded-full  overflow-hidden"
-                                          src="">
+                                          src="${user.photo}">
 
                             </div>
                             <p class="text-center col-start-2 col-end-4 text-[3rem] font-bold">TOP 20%</p>
                      </div>
                      <div class="self-center   align-self-center">
-                            <p class="text-center text-[2rem]">NFTS</p>
+                            <p class="text-center text-[2rem]">COIN X GAME</p>
                             <div
                                    class="self-center  align-self-center  h-[12rem] w-[12rem] rounded-[100%] overflow-hidden grid ">
                                    <div id="test"
@@ -161,9 +169,9 @@ export default {
         }
 
         document.getElementById("content").innerHTML = `
-        <div class="grid grid-cols-3"><p class="col-start-2 text-black text-[1.5rem] text-center ">TOP PLAYED</p>
+        <div class="grid grid-cols-3"><p class="col-start-2 text-black text-[2.3rem] text-center ">TOP PLAYED</p>
 <div
-                            class="col-start-2 row-start-2   justify-self-center w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
+                            class="col-start-2 row-start-2  bg-white/60 justify-self-center w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
                             <div class="h-[8.5rem] w-[8.5rem] rounded-full border-[1px]">
                                    <img class="object-cover h-full w-full border-[2px] flex justify-center items-center rounded-full  overflow-hidden"
                                           src="${user.photo}">
@@ -171,11 +179,11 @@ export default {
                             </div>
                             <div class="flex-col col-start-2 col-end-5 text-[1rem] w-[100%] h-[100%] items-center">
                             
-                             <div class="flex p-[0.2rem] justify-between w-full border-[1px]"><div>#1</div><div>Palomo</div></div>
-                             <div class="flex p-[0.2rem] justify-between w-full border-[1px]"><div>#2</div><div>Palomo2</div></div>
-                             <div class="flex p-[0.2rem] justify-between w-full border-[1px]"><div>#3</div><div>Palomo3</div></div>
+                             <div class="flex p-[0.2rem] justify-between w-[80%] border-[1px]"><div>#1</div><div>Palomo</div></div>
+                             <div class="flex p-[0.2rem] justify-between w-[80%] border-[1px]"><div>#2</div><div>Palomo2</div></div>
+                             <div class="flex p-[0.2rem] justify-between w-[80%] border-[1px]"><div>#3</div><div>Palomo3</div></div>
 
-                             <div class="flex justify-between p-[0.2rem] rounded text-[1.4rem] mt-[10%] w-full border-[1px]"><div>#14</div><div>You</div></div>
+                             <div class="flex justify-around p-[0.2rem] w-[55%] rounded text-[1.4rem] mt-[10%]  border-[1px]"><div>#14</div><div>You</div></div>
 
                               </div>
                      </div>
@@ -201,13 +209,36 @@ export default {
 </script>
 
 <template>
+  <div id="asideact" class="rounded sm:hidden content-center duration-[1000ms] fixed translate-x-[1000px] w-full z-50 h-full  p-[3rem] bg-white/20">
+              <div class="flex rounded justify-center h-[100%] w-[100%] items-center">
+                     <div class="bg-white rounded h-[100%] w-[100%] flex flex-col p-[0rem]">
+                            <div class="flex bg-gray-900 w-[100%] p-[1rem] justify-between">
+
+                            <div class="text-[1.7rem] text-white">MiniGames</div>
+                            <button id="close" class="self-end w-[3rem] h-[3rem] rounded bg-red-600 text-white">X</button>
+                     </div>
+                     <div class="bg-violet-400 h-full p-[1rem]">
+                            <input type="text" class="rounded w-[100%] cursor-pointer">
+                            <div class="flex flex-col mt-[10%] justify-between items-center h-[40%] mt-[4rem] ">
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+                            <div class="bg-violet-300 rounded cursor-pointer text-center hover:h-[3rem] hover:w-[100%] hover:bg-violet-700 w-[70%] duration-[1000ms] flex justify-center items-center ">T1</div>
+
+
+
+                            </div>
+                     </div>
+                     </div>
+              </div>
+       </div>
   <div class="grid grid-cols-8 grid-rows-[200px 300px]">
     <asideX class="row-start-1 row-end-3"> </asideX>
 
     <div
       class="mt-[10%] grid grid-cols-8 sm:flex col-start-2 sm:col-end-2 col-end-[-2] w-full row-start-1 row-end-1 justify-center items-center rounded bg-gray-900 sm:w-[85vw] h-[15vh]"
     >
-      <asideY class="col-start-2 cursor-pointer"></asideY>
+      <asideY id="asidey" class="col-start-2 cursor-pointer"></asideY>
       <p class="col-start-5 self-center text-[2.5rem] text-[white]">Stats</p>
     </div>
     <div
