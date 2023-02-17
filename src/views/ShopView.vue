@@ -266,7 +266,7 @@ export default {
       <!--  -->
       <div class="sm:grid  w-[75%]   flex flex-col justify-center lg:grid-cols-4 sm:grid-cols-2 text-[2rem] items-center">
         <p class="sm:hidden mt-[2rem]"> Epic</p>
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded">
+        <div class="group xl:h-[13rem] xl:w-[9.5rem] h-[11rem] w-[8rem] [perspective:1000px]  rounded">
           <div
             class="relative h-full w-full border-[violet] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div class="absolute inset-0">
@@ -286,7 +286,7 @@ export default {
           </div>
         </div>
         <p class="sm:hidden mt-[2rem]"> Rare</p>
-        <div class="group h-[11rem] w-[8rem] [perspective:1000px]  rounded">
+        <div class="group xl:h-[13rem] xl:w-[9.5rem] h-[11rem] w-[8rem] [perspective:1000px]  rounded">
           <div
             class="relative h-full w-full border-[blue] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div class="absolute inset-0">
@@ -306,7 +306,7 @@ export default {
           </div>
         </div>
         <p class="sm:hidden mt-[2rem]">Common</p>
-        <div class="group sm:mt-[3rem] lg:mt-[0] h-[11rem] w-[8rem] [perspective:1000px] rounded">
+        <div class="group sm:mt-[3rem] lg:mt-[0] xl:h-[13rem] xl:w-[9.5rem] h-[11rem] w-[8rem] [perspective:1000px] rounded">
           <div
             class="relative h-full w-full border-[green] border-[2px] rounded-xl shadow-x1 transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div class="absolute inset-0">
@@ -326,7 +326,7 @@ export default {
           </div>
         </div>
         <p class="sm:hidden mt-[2rem]"> Random</p>
-        <div class="group  sm:mt-[3rem] lg:mt-[0] h-[11rem] w-[8rem] [perspective:1000px] rounded">
+        <div class="group  sm:mt-[3rem] lg:mt-[0] xl:h-[13rem] xl:w-[9.5rem] h-[11rem] w-[8rem] [perspective:1000px] rounded">
           <div
             class="relative h-full w-full  bg-black/90 border-[rgba(100 0 0)] border-[2px] rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div class="flex items-center justify-center inset-0">

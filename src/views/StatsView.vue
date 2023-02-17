@@ -33,7 +33,7 @@ export default {
                 console.log(data2[x]);
                 
                 (this.stats = data2[x]);
-                return this.load()
+                return this.load(this.users)
               }
             });
         }
@@ -44,7 +44,7 @@ export default {
   
 
   methods: {
-    load() {
+    load(user) {
     document.getElementById("nft").addEventListener(
       "click",
       function () {
@@ -139,7 +139,9 @@ export default {
 
 ;
         setTimeout(function () {
+          if (document.getElementById("test") != null){
           document.getElementById("test").classList.add("w-[20%]");
+          }
         });
       },
       3000
@@ -159,36 +161,36 @@ export default {
         }
 
         document.getElementById("content").innerHTML = `
+        <div class="grid grid-cols-3"><p class="col-start-2 text-black text-[1.5rem] text-center ">TOP PLAYED</p>
 <div
-                            class=" justify-self-center   w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
+                            class="col-start-2 row-start-2   justify-self-center w-[30rem] h-[12rem] rounded grid grid-cols-3 p-[1rem] content-center items-center border-[1px]">
                             <div class="h-[8.5rem] w-[8.5rem] rounded-full border-[1px]">
                                    <img class="object-cover h-full w-full border-[2px] flex justify-center items-center rounded-full  overflow-hidden"
-                                          src="">
+                                          src="${user.photo}">
 
                             </div>
-                            <p class="text-center col-start-2 col-end-4 text-[3rem] font-bold">TOP 20%</p>
+                            <div class="flex-col col-start-2 col-end-5 text-[1rem] w-[100%] h-[100%] items-center">
+                            
+                             <div class="flex p-[0.2rem] justify-between w-full border-[1px]"><div>#1</div><div>Palomo</div></div>
+                             <div class="flex p-[0.2rem] justify-between w-full border-[1px]"><div>#2</div><div>Palomo2</div></div>
+                             <div class="flex p-[0.2rem] justify-between w-full border-[1px]"><div>#3</div><div>Palomo3</div></div>
+
+                             <div class="flex justify-between p-[0.2rem] rounded text-[1.4rem] mt-[10%] w-full border-[1px]"><div>#14</div><div>You</div></div>
+
+                              </div>
                      </div>
-                     <div class="self-center   align-self-center">
-                            <p class="text-center text-[2rem]">NFTS</p>
-                            <div
-                                   class="self-center  align-self-center  h-[12rem] w-[12rem] rounded-[100%] overflow-hidden grid ">
-                                   <div id="test"
-                                          class="flex col-start-1 row-start-1 justify-self-start align-self-center  items-center justify-center h-full w-full  bg-white transition-width duration-[5000ms] ease">
-                                   </div>
-                                   <div
-                                          class="h-[90%] rounded-full col-start-1 row-start-1 justify-self-center align-self-center w-[90%] bg-black text-white  items-center flex jsutify-center">
-                                          <p
-                                                 class="text-[3rem] font-bold self-center text-center w-[100%]">
-                                                 2/10</p>
-                                   </div>
-                            </div>
+                     
                      </div>
+                     </div>´
+                    </div>
 `
 
 
 ;
         setTimeout(function () {
+          if (document.getElementById("test") != null){
           document.getElementById("test").classList.add("w-[20%]");
+          }
         });
       },
       3000

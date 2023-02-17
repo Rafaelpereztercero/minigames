@@ -31,7 +31,7 @@ export default {
           
                                         <div  id="pUser" class="flex self-center mt-[-1rem] w-[4rem] h-[4rem] overflow-hidden">
                                          <img id="pImg" alt="pImage" class=" rounded  cursor-pointer   self-center object-cover h-[4rem] w-[4rem]" src=${data[x].photo}>
-                                         <button id="logout" class=" hidden rounded  self-center h-[4rem] border-[1px] w-[4rem]">Logout</button>
+                                         <button id="logout" class="text-[0.9rem] p-[0.3rem] hidden rounded  self-center h-[4rem] border-[1px] w-[4rem]">Logout</button>
                                          </div>`
             document.getElementById("logout").addEventListener("click", function () {
               document.cookie = "auth="
