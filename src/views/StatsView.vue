@@ -17,6 +17,8 @@ export default {
   },
   created() {
     if (document.cookie == "") {
+      router.push("/")
+
       return (this.users = []);
     }
 
@@ -42,6 +44,8 @@ export default {
             });
         }
       });
+      router.push("/")
+
   },
 
   

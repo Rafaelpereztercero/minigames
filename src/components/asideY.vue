@@ -1,10 +1,9 @@
 
 <script>
-import router from '../router'
+
+
 window.onload = function() {
-     function  load(t) {
-      router.push(t)
-    }
+    
     document.getElementById("asidey").addEventListener("click",function() {
               
              

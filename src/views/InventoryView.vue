@@ -57,6 +57,8 @@ export default {
        },
        async mounted() {
               if (document.cookie == "") {
+                     router.push("/")
+
                      return (this.users = []);
               }
              
@@ -77,8 +79,11 @@ export default {
                             .then((response2) => response2.json())
                             .then((data2) => {
                                    this.nfts.push(data2);
+                                   return
                             });
               }
+              router.push("/")
+
        },
 };
 </script>

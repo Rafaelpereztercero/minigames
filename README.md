@@ -1,7 +1,7 @@
 ### Minigames
 
 
-# ** DIW REQS**
+# DIW REQS
 
 ## 1. Use the basic structure of Vue with Vue Router (Create at least 4 pages)
 
@@ -122,11 +122,10 @@
 
 ![image](https://user-images.githubusercontent.com/91564342/219946073-edd1316d-abee-489b-89d5-1fe0b748a88d.png)
 
-# **DWEC REQS**
+# DWEC REQS
 
 ## 1.  Declarative rendering {{ }}
 ![image](https://user-images.githubusercontent.com/91564342/219953962-9a9e9ee0-7876-43ed-b6cf-c0db9e758d82.png)
-
 
 ## 2. Binding (v-bind)
 ![image](https://user-images.githubusercontent.com/91564342/219954036-33a1cd42-f18e-4c39-a843-3a851d3d45de.png)
@@ -135,11 +134,29 @@
 ![image](https://user-images.githubusercontent.com/91564342/219954076-b15ac868-e3f0-496b-bb65-e2c2d5541afc.png)
 
 ## 4. 2-way Binding (v-model)
-![image](https://user-images.githubusercontent.com/91564342/219954455-9dbf75f2-4bc6-43d0-98ef-bbec67c8f969.png)
+![image](https://user-images.githubusercontent.com/91564342/219965887-8e066f12-0182-4dcb-85fe-e26c8e6810da.png)
+
 
 ## 5. Event “click”
 ![image](https://user-images.githubusercontent.com/91564342/219954508-02dfb6a7-1db6-47c6-89d7-711d1c033ad7.png)
  
+## 6. GET ONE
+![image](https://user-images.githubusercontent.com/91564342/219965961-76095a7e-7e57-4866-b176-4d1b066be0e0.png)
+
+## 7. GET ALL
+![image](https://user-images.githubusercontent.com/91564342/219966027-864cf08a-c470-4be6-bf89-3b49c7df2bb8.png)
+
+## 8. PATCH
+![image](https://user-images.githubusercontent.com/91564342/219966119-49bff59d-829d-44ae-ab4c-41011f5a6d46.png)
+
+## 9. DELETE
+![image](https://user-images.githubusercontent.com/91564342/219966130-69cb9497-827a-4d3c-b358-f0d490480a8b.png)
+
+## 10 . NESTING
+![image](https://user-images.githubusercontent.com/91564342/219966180-b192d974-2397-4ba8-b969-0680f81bdb4f.png)
+
+# 11. METHODS
+![image](https://user-images.githubusercontent.com/91564342/219966285-384361d1-72d2-4527-9811-afc7c76ed22c.png)
 
 # CONCLUSION
 

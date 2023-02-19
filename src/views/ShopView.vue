@@ -19,6 +19,8 @@ export default {
   async created() {
     
     if (document.cookie == "") {
+
+      router.push("/")
       return (this.users = []);
     }
     
