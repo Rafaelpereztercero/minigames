@@ -5,10 +5,9 @@
 
 ## 1. Use the basic structure of Vue with Vue Router (Create at least 4 pages)
 
-#### Vue Router implemented with 8 diferent pages or "views"
+#### Vue Router implemented with 9 diferent pages or "views"
 
-![image](https://user-images.githubusercontent.com/91564342/219944691-23203c2d-1066-4b78-abb4-464b333f2b21.png)
-
+![image](https://user-images.githubusercontent.com/91564342/219966531-1733575f-14dc-45be-bfe0-bd1547988c08.png)
 
 ## 2. Use components to modularize the application
 
@@ -107,7 +106,7 @@
 
 ## 1. Create more pages than are strictly required
 
-#### Implemented 8 diferent pages or "views"
+#### Implemented 9 diferent pages or "views"
 
 ## 2. Use an image API in your project 
 
