@@ -17,6 +17,8 @@ export default {
                      users: [],
               };
        },
+       props: ['modelValue'],
+  emits: ['update:modelValue'],
        methods: {
              
               
@@ -456,7 +458,11 @@ IA
                  
                      <div class="bg-violet-300 h-full p-[0rem] w-full flex flex-col items-center mt-[0rem]">
                             <div class="bg-violet-400 w-full flex flex-col items-center">
-                            <input type="text" class="rounded w-[70%] cursor-pointer mt-[1rem]">
+                                   <input class="rounded w-[70%] cursor-pointer mt-[1rem]"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+  />"   {{ message }}
+
                             <div class="bg-violet-400 h-[20%]  pb-[1rem] grid grid-cols-3 w-full mt-[2rem]">
                            
                                    <div v-on:click="load('Login')"
