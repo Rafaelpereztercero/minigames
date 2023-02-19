@@ -26,7 +26,10 @@ export default {
               
              
               
-
+              document.getElementById("acceptCookie").addEventListener("click",function() {
+                     
+                     document.getElementById("cookieAlert").classList.add("hidden")
+              })
     
               function setCeld(num) {
                      for (var z = 0; z < num; z++) {
@@ -491,8 +494,8 @@ IA
                      <asideY id="asidey" class="col-start-2 cursor-pointer"></asideY>
                      <p class="col-start-5 self-center text-[2.5rem] text-[white]">Games</p>
               </div>
-              <!-- <div  id="cookieAlert" class="flex ">
-                     <div class="fixed z-50">
+              <div  id="cookieAlert" class="flex ">
+                     <div class="fixed z-[100]">
                                    <div 
                                           class="flex flex-col text-black items-center  w-[75%] bg-white p-[2rem] mt-[3rem] rounded">
                                           <div class="grid grid-cols-3 justify-center ">
@@ -533,7 +536,7 @@ IA
                                           </div>
                                    </div>
                             </div>
-                     </div> -->
+                     </div>
               <div id="gameContainer"
                      class="flex mt-[10%] sm:mt-0 justify-center flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem] row-start-2 row-end-2 rounded bg-gradient-to-b from-fuchsia-400 sm:w-[85vw] h-[70vh] items-center">
                      <input type="text" class="cursor-pointer w-[80%] h-[2rem] text-center g-white/60 rounded"
