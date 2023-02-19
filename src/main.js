@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 import './assets/style.css'
+import './assets/style.scss'
 import 'bootstrap/dist/css/bootstrap.css'
 import bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import { RouterLink } from 'vue-router'
