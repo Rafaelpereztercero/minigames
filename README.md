@@ -40,6 +40,15 @@
   -   NAV-BAR
   
   ![image](https://user-images.githubusercontent.com/91564342/219945324-62310df7-84a1-4870-8cc9-6a4a6519d307.png)
+  
+  -   CUSTOM ALERTS
+  
+  ![image](https://user-images.githubusercontent.com/91564342/219952531-13a99054-5e3f-4d8e-a853-b9184ca45259.png)
+  
+  -   TABLES
+  
+  ![image](https://user-images.githubusercontent.com/91564342/219952662-ac3f06e1-07c0-488a-861e-f24d60b6e8a6.png)
+
 
 ## 5 Use bootstrap customize to customize colors and styles in a custom.scss file, overriding Bootstrap variables and maps. Explain how have you configured it in the ## Documentation
   
@@ -90,7 +99,7 @@
 
 ## 12 Lighthouse
 
-### As you can see in the next image, my website is almost fully optimaze, that also means that all the structure and files (including the size) are correct 
+### As you can see in the next image, my website is almost fully optimazed, that also means that all the structure and files (including the size) are correct 
 
 ![image](https://user-images.githubusercontent.com/91564342/219945749-abb15b4e-56d4-4eb3-b777-67777b6784bb.png)
 
