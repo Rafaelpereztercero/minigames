@@ -74,7 +74,19 @@
 
 ## 10 Create a color palette and apply it to the project.
 
+### Color palette
+
+![image](https://user-images.githubusercontent.com/91564342/219951225-16882e0a-d940-4e58-90ef-c735ff3aa2e7.png)
+
 ## 11 The UI and UX criteria seen in class are generally followed
+
+### This website follows good practices that improve UI and UX.
+#### 1 - Accesibility
+#### 2 - Color palette
+#### 3 - Preformance
+#### 4 - Distintive 
+#### 5 - Content distribution
+
 
 ## 12 Lighthouse
 
@@ -101,7 +113,9 @@
 
 ![image](https://user-images.githubusercontent.com/91564342/219946073-edd1316d-abee-489b-89d5-1fe0b748a88d.png)
 
+# CONCLUSION
 
+## In this project iv learned the basics about view (routes,views,modules ...) and as i have previously documented, my project follows all the steps required
 
  
 

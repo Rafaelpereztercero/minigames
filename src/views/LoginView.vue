@@ -88,7 +88,8 @@ export default {
 </script>
 
 <template>
-      <div id="asideact" class="rounded sm:hidden content-center duration-[1000ms] fixed translate-x-[1000px] w-full z-50 h-full  p-[3rem] bg-white/20">
+  
+  <div id="asideact" class="rounded sm:hidden content-center duration-[1000ms] fixed translate-x-[1000px] w-full z-50 h-full  p-[3rem] bg-white/20">
               <div class="flex rounded justify-center h-[100%] w-[100%] items-center">
                      <div class="bg-white rounded h-[100%] w-[100%] flex flex-col p-[0rem]">
                             <div class="flex bg-gray-900 w-[100%] p-[1rem] justify-between">
@@ -129,26 +130,28 @@ export default {
                      </div>
               </div>
        </div>
-     <div class="grid grid-cols-8 grid-rows-[200px 300px]">
+       <div class="grid grid-cols-8 grid-rows-[200px 300px]">
               <asideX class="row-start-1 row-end-3">
 
               </asideX>
 
               <div
                      class="mt-[10%] grid grid-cols-8 sm:flex col-start-2 sm:col-end-2 col-end-[-2] w-full row-start-1 row-end-1 justify-center items-center rounded bg-gray-900 sm:w-[85vw] h-[15vh]">
-                     <asideY class="col-start-2 cursor-pointer"></asideY>
+                     <asideY id="asidey" class="col-start-2 cursor-pointer"></asideY>
                      <p class="col-start-5 self-center text-[2.5rem] text-[white]">Login</p>
+                     
+
 
               </div>
               <div
-                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] h-[70vh]">
+                     class="flex mt-[10%] sm:mt-0  flex-col w-full col-start-2 col-end-[-2] sm:col-end-2 sm:p-[1rem]  row-start-2 row-end-2  items-center rounded bg-gradient-to-b from-fuchsia-400  sm:w-[85vw] h-[70vh]">
 
-                     <form class="border-[1px] flex flex-col justify-around align-between text-[white] rounded h-full w-full ">
+                     <form class="sm:border-[1px] flex flex-col justify-around align-between text-[white] rounded h-full w-full ">
                           
-                            <label class="flex w-full justify-around" for="id">Username
+                            <label class="flex w-full justify-around text-[0.85rem] sm:text-[1rem]" for="id">Username
                                    <input  class="rounded text-[black]" type="text" id="id">
                             </label>
-                            <label class="flex w-full justify-around" for="pass">Password
+                            <label class="flex w-full justify-around text-[0.85rem] sm:text-[1rem]" for="pass">Password
                                    <input class="rounded text-[black]" type="password" id="pass">
                             </label>
                             <input type="button"  v-on:click="authUser()"  class=" cursor-pointer hover:text-black transition duration-800 ease-in-out hover:bg-white rounded w-[75%] self-center h-[2.5rem] bg-gray-900 text-[white]" value="Login">
